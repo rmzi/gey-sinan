@@ -1,0 +1,172 @@
+id,harari_latin,harari_ethiopic,harari_arabic,english,category,source,verified,audio_recorded,notes
+# NUMBERS (Burton 1894)
+num-1,ahad,አሐድ,,one,numbers,Burton 1894,pending,no,
+num-2,kot,ኮት,,two,numbers,Burton 1894,pending,no,
+num-3,shishti,ሽሽቲ,,three,numbers,Burton 1894,pending,no,
+num-4,harad,ሀራድ,,four,numbers,Burton 1894,pending,no,
+num-5,hamisti,ሀምስቲ,,five,numbers,Burton 1894,pending,no,
+num-6,saddisti,ሳዲስቲ,,six,numbers,Burton 1894,pending,no,
+num-7,sati,ሳቲ,,seven,numbers,Burton 1894,pending,no,
+num-8,sot,ሶት,,eight,numbers,Burton 1894,pending,no,
+num-9,sehtan,ሰህታን,,nine,numbers,Burton 1894,pending,no,
+num-10,assir,አስር,,ten,numbers,Burton 1894,pending,no,
+num-20,koyah,ኮያህ,,twenty,numbers,Burton 1894,pending,no,
+num-100,bakla,ባክላ,,hundred,numbers,Burton 1894,pending,no,
+# FAMILY (Burton 1894 + Glosbe)
+fam-1,awa,አዋ,,father,family,Burton 1894,pending,no,Burton spelling
+fam-1b,aw,ኣው,,father,family,Glosbe,pending,no,Modern usage
+fam-2,a'e,አእ,,mother,family,Burton 1894,pending,no,Burton spelling
+fam-2b,ay,ኣይ,,mother,family,Glosbe,pending,no,Modern usage
+fam-3,ih,እህ,,brother,family,Burton 1894,pending,no,
+fam-3b,abba,አብባ,,big brother,family,Glosbe,pending,no,
+fam-4,ihit,እሂት,,sister,family,Burton 1894,pending,no,
+fam-4b,abbaya,አብባያ,,big sister,family,Glosbe,pending,no,
+fam-5,lijjay,ልጃይ,,son,family,Burton 1894,pending,no,
+fam-5b,waldi,ወልዲ,,child (male),family,Glosbe,pending,no,
+fam-6,kahat,ካሃት,,daughter,family,Burton 1894,pending,no,
+fam-7,baba,ባባ,,grandfather,family,Burton 1894,pending,no,
+fam-7b,bab,ባብ,,grandfather,family,Glosbe,pending,no,
+fam-8,umma,ኡማ,,grandmother,family,Burton 1894,pending,no,
+fam-9,hamat,ሐማት,,mother-in-law,family,Glosbe,pending,no,
+fam-10,hamachi,ሐማቺ,,father-in-law,family,Glosbe,pending,no,
+fam-11,absuma,አብሱማ,,grandchild,family,Glosbe,pending,no,
+fam-12,shaqiq,ሸቂቅ,,sibling (from same mother),family,Glosbe,pending,no,
+# BODY PARTS (Burton 1894)
+body-1,urus,ኡሩስ,,head,body,Burton 1894,pending,no,
+body-2,in,እን,,eye,body,Burton 1894,pending,no,
+body-3,uf,ኡፍ,,nose,body,Burton 1894,pending,no,
+body-4,uzn,ኡዝን,,ear,body,Burton 1894,pending,no,
+body-5,afe,አፈ,,mouth,body,Burton 1894,pending,no,
+body-6,fit,ፊት,,face,body,Burton 1894,pending,no,
+body-7,arrat,አራት,,tongue,body,Burton 1894,pending,no,
+body-8,sin,ስን,,tooth,body,Burton 1894,pending,no,
+body-9,angat,አንጋት,,neck,body,Burton 1894,pending,no,
+body-10,iji,እጅ,,arm/hand,body,Burton 1894,pending,no,
+body-11,ingir,እንግር,,leg/foot,body,Burton 1894,pending,no,
+body-12,wazanah,ወዛናህ,,heart,body,Burton 1894,pending,no,
+body-13,dam,ዳም,,blood,body,Burton 1894,pending,no,
+body-14,kub,ኩብ,,heel,body,Burton 1894,pending,no,
+body-15,kut,ኩት,,liver,body,Burton 1894,pending,no,
+body-16,kars,ካርስ,,belly/stomach,body,Burton 1894,pending,no,
+# COLORS (Burton 1894)
+color-1,tay,ታይ,,black,colors,Burton 1894,pending,no,
+color-2,najih,ናጅህ,,white,colors,Burton 1894,pending,no,
+color-3,kayh,ካይህ,,red,colors,Burton 1894,pending,no,
+color-4,dama,ዳማ,,green,colors,Burton 1894,pending,no,
+color-5,hurdi,ሁርዲ,,yellow,colors,Burton 1894,pending,no,
+# FOOD & DRINK (Burton 1894 + Glosbe)
+food-1,mi,ሚ,,water,food,Burton 1894,pending,no,Burton spelling
+food-1b,miy,ሚይ,,water,food,Glosbe,pending,no,Modern usage
+food-2,bun,ቡን,,coffee,food,Burton 1894,pending,no,
+food-3,basar,ባሳር,,meat,food,Burton 1894,pending,no,
+food-4,ukhat,ኡኻት,,bread,food,Burton 1894,pending,no,
+food-5,hangur,ሐንጉር,,food,food,Glosbe,pending,no,General word for food
+food-6,zurbyan,ዙርቢያን,,rice dish,food,Glosbe,pending,no,
+food-7,ful,ፉል,,fava beans,food,Glosbe,pending,no,
+food-8,kuskus,ኩስኩስ,,sweet roasted food,food,Glosbe,pending,no,
+food-9,jehla,ጀሕላ,,water container (clay),food,Glosbe,pending,no,
+# HOME & PLACES (Burton 1894 + Glosbe)
+home-1,gar,ጋር,,house,home,Burton 1894,pending,no,
+home-2,magalah,ማጋላህ,,town,home,Burton 1894,pending,no,
+home-3,isad,እሳድ,,fire,home,Burton 1894,pending,no,
+home-4,meqla,ሜቅላ,,office/workplace,home,Glosbe,pending,no,
+home-5,taqet,ጣቄት,,hole in wall (traditional house),home,Glosbe,pending,no,
+home-6,derbgar,ደርቢጋር,,building/construction,home,Glosbe,pending,no,
+# PEOPLE (Burton 1894)
+people-1,abosh,አቦሽ,,man,people,Burton 1894,pending,no,
+people-2,indosh,እንዶሽ,,woman,people,Burton 1894,pending,no,
+# ANIMALS (Burton 1894 + Glosbe)
+animal-1,faras,ፋራስ,,horse,animals,Burton 1894,pending,no,
+animal-2,bushshii,ቡሽሺ,,dog,animals,Burton 1894,pending,no,Burton spelling
+animal-2b,buchi,ቡቺ,,dog,animals,Glosbe,pending,no,Modern spelling
+animal-3,aduru,አዱሩ,,cat,animals,Glosbe,pending,no,
+animal-4,uf,ኡፍ,,bird,animals,Glosbe,pending,no,
+animal-5,chachu,ጫጩ,,baby bird/chick,animals,Glosbe,pending,no,
+# NATURE (Glosbe)
+nature-1,ir,ኢር,,sun,nature,Glosbe,pending,no,
+nature-2,chereqa,ጨረቃ,,moon,nature,Glosbe,pending,no,
+nature-3,wahri,ዋሕሪ,,moon,nature,Glosbe,pending,no,Alternative
+nature-4,lefu,ለፉ,,tree,nature,Glosbe,pending,no,
+nature-5,zagami,ዘጋሚ,,types of tree,nature,Glosbe,pending,no,
+nature-6,gartira,ጋርቲራ,,juniper tree,nature,Glosbe,pending,no,
+nature-7,diz,ዲዝ,,waterfall,nature,Glosbe,pending,no,
+# TIME (Glosbe)
+time-1,ayam,አያም,,day,time,Glosbe,pending,no,
+time-2,moy,ሞይ,,day,time,Glosbe,pending,no,Alternative
+time-3,mishet,ሚሼት,,night,time,Glosbe,pending,no,
+time-4,orti,ኦርቲ,,night,time,Glosbe,pending,no,Alternative
+time-5,amshasha,አምሻሻ,,nightfall,time,Glosbe,pending,no,
+time-6,mihdar,ሚሕዳር,,sleeping time,time,Glosbe,pending,no,
+time-7,mawlud,መውሉድ,,birthday/maulid,time,Glosbe,pending,no,
+# PRONOUNS (Burton 1894)
+pron-1,an,አን,,I,pronouns,Burton 1894,pending,no,
+pron-2,akhakh,አኻኽ,,you (singular),pronouns,Burton 1894,pending,no,
+pron-3,huwa,ሁዋ,,he,pronouns,Burton 1894,pending,no,
+pron-4,itta,እታ,,she,pronouns,Burton 1894,pending,no,
+pron-5,inyash,እንያሽ,,we,pronouns,Burton 1894,pending,no,
+pron-6,hiyyash,ሂያሽ,,they,pronouns,Burton 1894,pending,no,
+# VERBS (Burton 1894 + Glosbe)
+verb-1,let,ለት,,go,verbs,Burton 1894,pending,no,Burton
+verb-1b,lex,ሌጥ,,go,verbs,Glosbe,pending,no,Modern
+verb-2,bila,ቢላ,,eat,verbs,Burton 1894,pending,no,
+verb-3,sich,ስች,,drink,verbs,Burton 1894,pending,no,
+verb-4,sit,ስት,,give,verbs,Burton 1894,pending,no,
+verb-5,gidal,ጊዳል,,kill,verbs,Burton 1894,pending,no,
+verb-6,fir,ፊር,,fear,verbs,Burton 1894,pending,no,
+verb-7,haych,ሃይች,,see/look,verbs,Burton 1894,pending,no,
+verb-8,halko,ሃልኮ,,I am,verbs,Burton 1894,pending,no,
+verb-9,narkho,ናርኾ,,I was,verbs,Burton 1894,pending,no,
+verb-10,ney,ነይ,,come,verbs,Glosbe,pending,no,
+verb-11,eda,ኤዳ,,speak,verbs,Glosbe,pending,no,
+verb-12,magnit,መኚት,,sleep,verbs,Glosbe,pending,no,
+verb-13,ishqi,ኢሸቂ,,love,verbs,Glosbe,pending,no,
+verb-14,mesheq,መሸቅ,,to love/adore,verbs,Glosbe,pending,no,
+verb-15,dilaga,ዲላገ,,work,verbs,Glosbe,pending,no,
+verb-16,wereda,ወረዳ,,come down,verbs,Glosbe,pending,no,
+verb-17,qereba,ቀረባ,,come forward,verbs,Glosbe,pending,no,
+verb-18,gergeb,ገርገብ,,go back,verbs,Glosbe,pending,no,
+# ADJECTIVES (Glosbe)
+adj-1,bereh,በረሕ,,good,adjectives,Glosbe,pending,no,
+adj-2,or,ኦር,,good,adjectives,Glosbe,pending,no,
+adj-3,bulul,ቡሉል,,bad/corrupt,adjectives,Glosbe,pending,no,
+adj-4,ari,አሪ,,bad,adjectives,Glosbe,pending,no,
+adj-5,gidir,ጊዲር,,big,adjectives,Glosbe,pending,no,
+adj-6,jabir,ጀባቢር,,very big,adjectives,Glosbe,pending,no,
+adj-7,xit,ጢት,,small,adjectives,Glosbe,pending,no,
+adj-8,yansi,ያንሲ,,small/not enough,adjectives,Glosbe,pending,no,
+adj-9,qoram,ቆራም,,beautiful,adjectives,Glosbe,pending,no,
+adj-10,tuba,ጡባ,,beautiful,adjectives,Glosbe,pending,no,
+adj-11,damam,ደማም,,pretty,adjectives,Glosbe,pending,no,
+adj-12,tasti,ተስቲ,,happy,adjectives,Glosbe,pending,no,
+adj-13,said,ሰኢድ,,happy/blessed,adjectives,Glosbe,pending,no,
+# SOCIAL (Glosbe)
+social-1,merin,መሪኝ,,friend (male),social,Glosbe,pending,no,
+social-2,daji,ዳጂ,,friend,social,Glosbe,pending,no,
+social-3,gel,ጌል,,friend (female),social,Glosbe,pending,no,
+social-4,gezen,ጌዘን,,girlfriend/love partner,social,Glosbe,pending,no,
+social-5,sadiq,ሰዲቅ,,intimate friend,social,Glosbe,pending,no,
+social-6,rafiq,ረፊቅ,,intimate friend,social,Glosbe,pending,no,
+social-7,mahalak,መሐልለቅ,,money,social,Glosbe,pending,no,
+social-8,qershi,ቀርሺ,,paper money,social,Glosbe,pending,no,
+social-9,ohfi,ኦህፊ,,sorry,social,Glosbe,pending,no,
+# GREETINGS & IDENTITY (harar.city)
+greet-1,gey,ጌይ,,Harar/city/home,greetings,harar.city,pending,no,Core term
+greet-2,gey usu,ጌይ ኡሱ,,Harari people,greetings,harar.city,pending,no,
+greet-3,sinan,ሲናን,,language,greetings,harar.city,pending,no,
+# ISLAMIC PHRASES (common Arabic loanwords)
+phrase-1,salaam,ሰላም,سلام,peace/hello,phrases,common,pending,no,Arabic loanword
+phrase-2,salaam aleykum,ሰላም ዐለይኩም,سلام عليكم,peace be upon you,phrases,common,pending,no,Arabic loanword
+phrase-3,insha'allah,እንሻአላህ,إن شاء الله,God willing,phrases,common,pending,no,Arabic loanword
+phrase-4,alhamdulillah,አልሐምዱሊላህ,الحمد لله,praise be to God,phrases,common,pending,no,Arabic loanword
+phrase-5,jazakallah,ጀዛክአላህ,جزاك الله,thank you (may God reward you),phrases,common,pending,no,Arabic loanword
+phrase-6,masha'allah,ማሻአላህ,ما شاء الله,wonderful (God has willed),phrases,common,pending,no,Arabic loanword
+phrase-7,subhanallah,ሱብሓንአላህ,سبحان الله,glory to God,phrases,common,pending,no,Arabic loanword
+phrase-8,bismillah,ቢስሚላህ,بسم الله,in the name of God,phrases,common,pending,no,Arabic loanword
+# EXPRESSIONS (Glosbe)
+expr-1,dad,ደድ,,love (noun),expressions,Glosbe,pending,no,
+expr-2,irqet,ኢርቀት,,heartfelt love,expressions,Glosbe,pending,no,
+expr-3,mehabba,መሐብባ,,strong love,expressions,Glosbe,pending,no,
+expr-4,orniت,ኦርነት,,good-heartedness,expressions,Glosbe,pending,no,
+expr-5,bukur,ቡኹር,,good flavor,expressions,Glosbe,pending,no,
+expr-6,denboba,ደንቦባ,,good news,expressions,Glosbe,pending,no,
+expr-7,limay,ሊማይ,,good ending,expressions,Glosbe,pending,no,
