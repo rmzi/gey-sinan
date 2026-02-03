@@ -2,17 +2,18 @@
 
 ## Mobile Applications
 
-### LearnHarariFull (iOS)
-- **Creator**: Gangora Learning Group (Australian-based)
-- **Platform**: iOS (iPhone, iPad, iTunes)
-- **Features**:
+### LearnHarariFull (iOS) - NO LONGER AVAILABLE
+- **Status**: Removed from App Store (as of 2025)
+- **Creator**: Nabela Abdul
+- **What it was**:
   - 200+ flashcards
   - High quality narration audio
   - 9 learning topics: clothing, objects, living things, numbers, colors, body parts, shapes, fruits, vegetables
-- **Audience**: Children and adults
-- **Links**:
-  - [App Info](https://appadvice.com/app/learnhararifull/961319765)
+- **Historical links** (no longer functional):
+  - [AppAdvice listing (archived)](https://appadvice.com/app/learnhararifull/961319765)
   - [Africa Speaks 4 Africa Review](https://www.africaspeaks4africa.net/learn-harari-full-an-application-to-teach-the-harari-language/)
+
+> **Note**: As of 2025, there are **NO mobile apps** available for learning Harari. This represents a critical gap.
 
 ## Textbooks & Printed Materials
 
@@ -90,6 +91,7 @@
 ## Gaps in Available Resources
 
 Based on research, the following are **notably lacking**:
+- **ANY mobile app** (LearnHarariFull was removed from App Store)
 - Comprehensive audio courses
 - Interactive online courses (Duolingo-style)
 - Video lesson series
@@ -97,6 +99,8 @@ Based on research, the following are **notably lacking**:
 - Spaced repetition vocabulary apps
 - Pronunciation training tools
 - Conversation practice platforms specific to Harari
+
+> **Bottom line**: There is currently NO digital learning tool for Harari beyond static PDFs and basic web pages.
 
 ## Sources
 
