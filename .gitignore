@@ -40,9 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Large/intermediate files from dictionary processing
-*.pdf
-dictionary-pages/
-dictionary-text/
-leslau-full.txt
-leslau-dictionary.txt
+# Source material (large files, PDFs, OCR output)
+/source_material/

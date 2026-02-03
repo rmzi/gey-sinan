@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gey Sinan
+
+A Harari language learning app for diaspora youth reconnecting with their ancestral language.
+
+**Gey Sinan** (ጌይ ሲናን) means "language of the city" in Harari — the Harari people call their city Harar "Gēy" and themselves "Gēy Usu'" (people of the city).
+
+## About Harari
+
+Harari is an endangered Ethiopian Semitic language spoken by ~25,000 people in the city of Harar and the diaspora. It is **distinct from Amharic** and uses three writing systems: Latin, Ethiopic (Ge'ez), and Arabic.
+
+## Features
+
+- Flashcard system with SM-2 spaced repetition
+- Support for Latin, Ethiopic, and Arabic scripts
+- Structured lessons with progressive unlocking
+- Offline-capable PWA
+- 4,629 vocabulary entries from Leslau's Etymological Dictionary
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── src/                    # Next.js app source
+│   ├── app/               # App router pages
+│   ├── components/        # React components
+│   ├── data/              # Vocabulary & lesson data
+│   ├── lib/               # Utilities (SRS, audio, storage)
+│   └── stores/            # Zustand state management
+├── scripts/               # Vocabulary workflow scripts
+├── docs/                  # Documentation & research
+├── harari-dictionary.csv  # 4,629 Harari words from Leslau
+└── vocabulary.csv         # Curated app vocabulary
+```
 
-## Learn More
+## Vocabulary Workflow
 
-To learn more about Next.js, take a look at the following resources:
+1. Edit `vocabulary.csv` to add/verify words
+2. Run `node scripts/build-vocabulary.js` to generate `words.json`
+3. Run `node scripts/list-audio-files.js` to see needed recordings
+4. Upload audio with `node scripts/upload-audio-to-s3.js`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See [docs/CLAUDE.md](docs/CLAUDE.md) for detailed documentation.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- Next.js 14+ (App Router)
+- TypeScript
+- Tailwind CSS
+- Zustand (state management)
+- PWA with next-pwa
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
