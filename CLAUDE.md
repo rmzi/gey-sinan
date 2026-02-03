@@ -59,11 +59,22 @@ Harari diaspora youth reconnecting with their ancestral language. Many are:
 - Want to connect with their heritage
 - Need accessible, modern learning tools
 
-## Vocabulary Workflow
+## Dictionary & Vocabulary
 
-### CSV Tracking File: `vocabulary.csv`
+### Harari Dictionary: `harari-dictionary.csv`
 
-The vocabulary is tracked in a CSV file that can be edited by native speakers for validation:
+The main dictionary contains **4,629 unique Harari words** extracted from Wolf Leslau's Etymological Dictionary of Harari (1963). This is the most comprehensive Harari dictionary available.
+
+| Column | Description |
+|--------|-------------|
+| `harari_latin` | Latin script spelling |
+| `english` | English translation |
+| `category` | Word category (noun, verb, adjective, etc.) |
+| `notes` | Etymological notes (Arabic, Cushitic origins, etc.) |
+
+### App Vocabulary: `vocabulary.csv`
+
+The app uses a curated subset of vocabulary for lessons, tracked in `vocabulary.csv`:
 
 | Column | Description |
 |--------|-------------|
@@ -78,9 +89,20 @@ The vocabulary is tracked in a CSV file that can be edited by native speakers fo
 | `audio_recorded` | `yes` or `no` |
 | `notes` | Any additional notes |
 
+### Dictionary Sources
+
+1. **Leslau's Etymological Dictionary** (4,629 entries in `harari-dictionary.csv`)
+   - Extracted via OCR from 86 dictionary pages
+   - Includes etymological notes (Arabic, Cushitic, Semitic origins)
+   - Categories: 2,288 nouns, 1,090 verbs, 320 adjectives, and more
+
+2. **Burton 1894** (154 entries in `vocabulary.csv`)
+   - Historical baseline vocabulary
+   - Needs modern verification
+
 ### Validation Process
 
-1. **Native speaker reviews** `vocabulary.csv`
+1. **Native speaker reviews** dictionary entries
 2. Mark `verified` column as `verified` or `rejected`
 3. Add corrections/notes as needed
 4. Run script to generate `words.json` from verified entries only
@@ -88,7 +110,8 @@ The vocabulary is tracked in a CSV file that can be edited by native speakers fo
 
 ### Current Status
 
-- Burton's 1894 vocabulary loaded as baseline (needs modern verification)
+- **4,629 words** from Leslau's dictionary ready for verification
+- **154 words** from Burton 1894 as baseline (needs modern verification)
 - Arabic loanwords (Islamic phrases) likely stable
 - Native Harari words need verification - may have shifted since 1894
 
