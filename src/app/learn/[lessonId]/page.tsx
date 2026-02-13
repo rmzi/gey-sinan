@@ -3,12 +3,11 @@
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
-import Flashcard from '@/components/Flashcard';
 import AudioButton from '@/components/AudioButton';
 import ScriptToggle from '@/components/ScriptToggle';
 import ProgressBar from '@/components/ProgressBar';
 import { useProgress } from '@/stores/useProgress';
-import { Word, Lesson, ScriptType, ReviewQuality } from '@/lib/types';
+import { Word, Lesson, ScriptType, ExerciseType } from '@/lib/types';
 import wordsData from '@/data/words.json';
 import lessonsData from '@/data/lessons.json';
 
@@ -17,17 +16,112 @@ const allLessons = lessonsData as Lesson[];
 
 type LessonMode = 'learn' | 'practice' | 'complete';
 
+interface PracticeQuestion {
+  type: ExerciseType;
+  word: Word;
+  answers: string[];
+  correctAnswer: string;
+  prompt: string;
+  matchPairs?: { left: string; right: string }[];
+}
+
 function getWordInScript(word: Word, script: ScriptType): string {
   switch (script) {
-    case 'latin':
-      return word.harariLatin;
-    case 'ethiopic':
-      return word.harariEthiopic;
-    case 'arabic':
-      return word.harariArabic;
-    default:
-      return word.harariLatin;
+    case 'latin': return word.harariLatin;
+    case 'ethiopic': return word.harariEthiopic;
+    case 'arabic': return word.harariArabic;
+    default: return word.harariLatin;
   }
+}
+
+function generateQuestions(lessonWords: Word[], exercises: Lesson['exercises']): PracticeQuestion[] {
+  if (lessonWords.length < 4) return [];
+
+  const questions: PracticeQuestion[] = [];
+
+  for (const exercise of exercises) {
+    const exerciseWords = exercise.wordIds
+      .map(id => lessonWords.find(w => w.id === id) || allWords.find(w => w.id === id))
+      .filter((w): w is Word => w !== undefined);
+
+    if (exerciseWords.length < 2) continue;
+
+    switch (exercise.type) {
+      case 'multiple_choice': {
+        // Show Harari word, pick English meaning
+        for (const word of exerciseWords) {
+          const otherWords = lessonWords.filter(w => w.id !== word.id);
+          const shuffled = [...otherWords].sort(() => Math.random() - 0.5);
+          const wrong = shuffled.slice(0, 3).map(w => w.english);
+          const answers = [word.english, ...wrong].sort(() => Math.random() - 0.5);
+          questions.push({
+            type: 'multiple_choice',
+            word,
+            answers,
+            correctAnswer: word.english,
+            prompt: 'What does this mean?',
+          });
+        }
+        break;
+      }
+
+      case 'script_matching': {
+        // Show Latin, pick the correct Ethiopic
+        for (const word of exerciseWords) {
+          if (!word.harariEthiopic) continue;
+          const otherWords = lessonWords.filter(w => w.id !== word.id && w.harariEthiopic);
+          const shuffled = [...otherWords].sort(() => Math.random() - 0.5);
+          const wrong = shuffled.slice(0, 3).map(w => w.harariEthiopic);
+          const answers = [word.harariEthiopic, ...wrong].sort(() => Math.random() - 0.5);
+          questions.push({
+            type: 'script_matching',
+            word,
+            answers,
+            correctAnswer: word.harariEthiopic,
+            prompt: 'Match the Ge\'ez script',
+          });
+        }
+        break;
+      }
+
+      case 'production': {
+        // Show English, type the Harari Latin transliteration
+        for (const word of exerciseWords) {
+          questions.push({
+            type: 'production',
+            word,
+            answers: [],
+            correctAnswer: word.harariLatin.toLowerCase(),
+            prompt: 'Type in Harari (Latin)',
+          });
+        }
+        break;
+      }
+
+      case 'matching': {
+        // Show Harari word, pick English meaning (same as multiple_choice for now)
+        for (const word of exerciseWords) {
+          const otherWords = lessonWords.filter(w => w.id !== word.id);
+          const shuffled = [...otherWords].sort(() => Math.random() - 0.5);
+          const wrong = shuffled.slice(0, 3).map(w => w.english);
+          const answers = [word.english, ...wrong].sort(() => Math.random() - 0.5);
+          questions.push({
+            type: 'matching',
+            word,
+            answers,
+            correctAnswer: word.english,
+            prompt: 'What does this mean?',
+          });
+        }
+        break;
+      }
+
+      default:
+        break;
+    }
+  }
+
+  return questions;
 }
 
 export default function LessonPage() {
@@ -50,6 +144,7 @@ export default function LessonPage() {
   const [practiceIndex, setPracticeIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [typedAnswer, setTypedAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -64,26 +159,10 @@ export default function LessonPage() {
       .filter((w): w is Word => w !== undefined);
   }, [lesson]);
 
-  // Generate practice questions
   const practiceQuestions = useMemo(() => {
-    if (lessonWords.length < 4) return [];
-
-    return lessonWords.map(word => {
-      // Get 3 wrong answers from other words
-      const otherWords = lessonWords.filter(w => w.id !== word.id);
-      const shuffledOthers = [...otherWords].sort(() => Math.random() - 0.5);
-      const wrongAnswers = shuffledOthers.slice(0, 3).map(w => w.english);
-
-      // Combine and shuffle all answers
-      const allAnswers = [word.english, ...wrongAnswers].sort(() => Math.random() - 0.5);
-
-      return {
-        word,
-        answers: allAnswers,
-        correctAnswer: word.english,
-      };
-    });
-  }, [lessonWords]);
+    if (!lesson || lessonWords.length < 4) return [];
+    return generateQuestions(lessonWords, lesson.exercises);
+  }, [lesson, lessonWords]);
 
   useEffect(() => {
     setMounted(true);
@@ -96,7 +175,6 @@ export default function LessonPage() {
     }
   }, [mounted, lesson, startLesson, initializeWordProgress]);
 
-  // Check if lesson is unlocked
   useEffect(() => {
     if (mounted && lesson && !isLessonUnlocked(lesson.id)) {
       router.push('/');
@@ -136,7 +214,6 @@ export default function LessonPage() {
     if (learnIndex < lessonWords.length - 1) {
       setLearnIndex(prev => prev + 1);
     } else {
-      // Move to practice mode
       setMode('practice');
     }
   };
@@ -156,28 +233,48 @@ export default function LessonPage() {
     const isCorrect = answer === currentQuestion.correctAnswer;
     if (isCorrect) {
       setCorrectAnswers(prev => prev + 1);
-      reviewWord(currentQuestion.word.id, 4); // Good rating
+      reviewWord(currentQuestion.word.id, 4);
     } else {
-      reviewWord(currentQuestion.word.id, 1); // Failed
+      reviewWord(currentQuestion.word.id, 1);
+    }
+    updateStreak();
+  };
+
+  const handleProductionSubmit = () => {
+    if (showResult || !currentQuestion) return;
+
+    const normalized = typedAnswer.trim().toLowerCase();
+    const correct = currentQuestion.correctAnswer.toLowerCase();
+    const isCorrect = normalized === correct;
+
+    setShowResult(true);
+
+    if (isCorrect) {
+      setCorrectAnswers(prev => prev + 1);
+      reviewWord(currentQuestion.word.id, 4);
+    } else {
+      reviewWord(currentQuestion.word.id, 1);
     }
     updateStreak();
   };
 
   const handleNextQuestion = () => {
     setSelectedAnswer(null);
+    setTypedAnswer('');
     setShowResult(false);
 
     if (practiceIndex < practiceQuestions.length - 1) {
       setPracticeIndex(prev => prev + 1);
     } else {
-      // Complete lesson
       completeLesson(lesson.id);
       setMode('complete');
     }
   };
 
   const learnProgress = ((learnIndex + 1) / lessonWords.length) * 100;
-  const practiceProgress = ((practiceIndex + 1) / practiceQuestions.length) * 100;
+  const practiceProgress = practiceQuestions.length > 0
+    ? ((practiceIndex + 1) / practiceQuestions.length) * 100
+    : 0;
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -204,7 +301,6 @@ export default function LessonPage() {
             <div className="w-6" />
           </div>
 
-          {/* Progress */}
           {mode !== 'complete' && (
             <div className="mt-4">
               <ProgressBar
@@ -226,7 +322,6 @@ export default function LessonPage() {
         {/* Learn Mode */}
         {mode === 'learn' && currentLearnWord && (
           <div>
-            {/* Word card */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 text-center">
               <p
                 className={`
@@ -243,14 +338,13 @@ export default function LessonPage() {
               </p>
               <AudioButton audioUrl={currentLearnWord.audioUrl} size="lg" />
 
-              {/* Show all scripts */}
               <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 grid grid-cols-3 gap-4 text-sm">
                 <div>
                   <p className="text-gray-400 text-xs mb-1">Latin</p>
                   <p className="text-gray-700 dark:text-gray-300">{currentLearnWord.harariLatin}</p>
                 </div>
                 <div>
-                  <p className="text-gray-400 text-xs mb-1">Ge'ez</p>
+                  <p className="text-gray-400 text-xs mb-1">Ge&apos;ez</p>
                   <p className="text-gray-700 dark:text-gray-300 font-ethiopic">{currentLearnWord.harariEthiopic}</p>
                 </div>
                 <div>
@@ -260,7 +354,6 @@ export default function LessonPage() {
               </div>
             </div>
 
-            {/* Navigation */}
             <div className="flex justify-between mt-6">
               <button
                 onClick={handlePreviousLearnWord}
@@ -277,7 +370,6 @@ export default function LessonPage() {
               </button>
             </div>
 
-            {/* Progress indicator */}
             <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
               {learnIndex + 1} of {lessonWords.length}
             </p>
@@ -287,54 +379,126 @@ export default function LessonPage() {
         {/* Practice Mode */}
         {mode === 'practice' && currentQuestion && (
           <div>
-            {/* Question */}
+            {/* Exercise type badge */}
+            <div className="flex justify-center mb-4">
+              <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400">
+                {currentQuestion.type === 'multiple_choice' && 'Multiple Choice'}
+                {currentQuestion.type === 'matching' && 'Matching'}
+                {currentQuestion.type === 'script_matching' && 'Script Matching'}
+                {currentQuestion.type === 'production' && 'Type It'}
+                {currentQuestion.type === 'listening' && 'Listening'}
+              </span>
+            </div>
+
+            {/* Question card */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 text-center mb-6">
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                What does this mean?
+                {currentQuestion.prompt}
               </p>
-              <p
-                className={`
-                  text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4
-                  ${settings.script === 'arabic' ? 'font-arabic' : ''}
-                  ${settings.script === 'ethiopic' ? 'font-ethiopic' : ''}
-                `}
-                dir={settings.script === 'arabic' ? 'rtl' : 'ltr'}
-              >
-                {getWordInScript(currentQuestion.word, settings.script)}
-              </p>
+
+              {/* Show different content based on exercise type */}
+              {currentQuestion.type === 'production' ? (
+                // Production: show English, user types Harari
+                <p className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                  {currentQuestion.word.english}
+                </p>
+              ) : currentQuestion.type === 'script_matching' ? (
+                // Script matching: show Latin form
+                <p className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                  {currentQuestion.word.harariLatin}
+                </p>
+              ) : (
+                // Multiple choice / matching: show word in selected script
+                <p
+                  className={`
+                    text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4
+                    ${settings.script === 'arabic' ? 'font-arabic' : ''}
+                    ${settings.script === 'ethiopic' ? 'font-ethiopic' : ''}
+                  `}
+                  dir={settings.script === 'arabic' ? 'rtl' : 'ltr'}
+                >
+                  {getWordInScript(currentQuestion.word, settings.script)}
+                </p>
+              )}
               <AudioButton audioUrl={currentQuestion.word.audioUrl} size="md" />
             </div>
 
-            {/* Answer options */}
-            <div className="space-y-3">
-              {currentQuestion.answers.map((answer, index) => {
-                const isSelected = selectedAnswer === answer;
-                const isCorrect = answer === currentQuestion.correctAnswer;
-
-                let buttonStyle = 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-emerald-500';
-                if (showResult) {
-                  if (isCorrect) {
-                    buttonStyle = 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-500 text-emerald-700 dark:text-emerald-400';
-                  } else if (isSelected && !isCorrect) {
-                    buttonStyle = 'bg-red-50 dark:bg-red-900/30 border-red-500 text-red-700 dark:text-red-400';
-                  }
-                }
-
-                return (
-                  <button
-                    key={index}
-                    onClick={() => handleAnswerSelect(answer)}
+            {/* Answer area - depends on exercise type */}
+            {currentQuestion.type === 'production' ? (
+              // Production: text input
+              <div className="space-y-4">
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={typedAnswer}
+                    onChange={(e) => setTypedAnswer(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && !showResult) handleProductionSubmit();
+                      if (e.key === 'Enter' && showResult) handleNextQuestion();
+                    }}
+                    placeholder="Type the Harari word..."
                     disabled={showResult}
-                    className={`
-                      w-full p-4 text-left rounded-xl border-2 transition-colors
-                      ${buttonStyle}
+                    className={`w-full p-4 text-lg rounded-xl border-2 outline-none transition-colors
+                      ${showResult
+                        ? typedAnswer.trim().toLowerCase() === currentQuestion.correctAnswer
+                          ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-900/30'
+                          : 'border-red-500 bg-red-50 dark:bg-red-900/30'
+                        : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'
+                      }
+                      text-gray-900 dark:text-gray-100
                     `}
+                    autoFocus
+                  />
+                </div>
+
+                {showResult && typedAnswer.trim().toLowerCase() !== currentQuestion.correctAnswer && (
+                  <p className="text-center text-emerald-600 dark:text-emerald-400 font-medium">
+                    Correct answer: <span className="text-lg">{currentQuestion.word.harariLatin}</span>
+                  </p>
+                )}
+
+                {!showResult && (
+                  <button
+                    onClick={handleProductionSubmit}
+                    disabled={typedAnswer.trim().length === 0}
+                    className="w-full py-3 bg-emerald-600 text-white font-medium rounded-xl hover:bg-emerald-700 disabled:opacity-50 transition-colors"
                   >
-                    <span className="font-medium">{answer}</span>
+                    Check
                   </button>
-                );
-              })}
-            </div>
+                )}
+              </div>
+            ) : (
+              // Multiple choice / script matching / matching: button options
+              <div className="space-y-3">
+                {currentQuestion.answers.map((answer, index) => {
+                  const isSelected = selectedAnswer === answer;
+                  const isCorrect = answer === currentQuestion.correctAnswer;
+                  const isEthiopic = currentQuestion.type === 'script_matching';
+
+                  let buttonStyle = 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-emerald-500';
+                  if (showResult) {
+                    if (isCorrect) {
+                      buttonStyle = 'bg-emerald-50 dark:bg-emerald-900/30 border-emerald-500 text-emerald-700 dark:text-emerald-400';
+                    } else if (isSelected && !isCorrect) {
+                      buttonStyle = 'bg-red-50 dark:bg-red-900/30 border-red-500 text-red-700 dark:text-red-400';
+                    }
+                  }
+
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => handleAnswerSelect(answer)}
+                      disabled={showResult}
+                      className={`w-full p-4 text-left rounded-xl border-2 transition-colors ${buttonStyle}`}
+                    >
+                      <span className={`font-medium ${isEthiopic ? 'font-ethiopic text-lg' : ''}`}>
+                        {answer}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
 
             {/* Continue button */}
             {showResult && (
@@ -385,6 +549,7 @@ export default function LessonPage() {
                   setPracticeIndex(0);
                   setCorrectAnswers(0);
                   setSelectedAnswer(null);
+                  setTypedAnswer('');
                   setShowResult(false);
                 }}
                 className="inline-flex items-center justify-center px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"

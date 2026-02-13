@@ -1,0 +1,39 @@
+id,harari_latin,harari_ethiopic,harari_arabic,english,category,word_ids,notes
+# GREETINGS
+phr-1,salaam aleykum,ሰላም ዐለይኩም,سلام عليكم,peace be upon you,greetings,"phrase-2",Standard greeting
+phr-2,wa aleykum salaam,ወዐለይኩም ሰላም,وعليكم السلام,and upon you peace,greetings,"phrase-2",Reply to salaam
+phr-3,zem neh?,ዘም ነህ?,,"how are you? (to male)",greetings,,Common greeting
+phr-4,zem nesh?,ዘም ነሽ?,,"how are you? (to female)",greetings,,Common greeting
+phr-5,bereh halko,በረሕ ሃልኮ,,"I am fine",greetings,"adj-1,verb-8",Common reply
+phr-6,alhamdulillah bereh,አልሐምዱሊላህ በረሕ,الحمد لله,praise God I am fine,greetings,"phrase-4,adj-1",
+# FAMILY EXPRESSIONS
+phr-7,aw zem al?,አው ዘም አል?,,"how is your father?",family,"fam-1",Polite inquiry
+phr-8,ay zem al?,አይ ዘም አል?,,"how is your mother?",family,"fam-2",Polite inquiry
+phr-9,ahli zem al?,አህሊ ዘም አል?,,"how is the family?",family,,Common question
+phr-10,gar let,ጋር ለት,,"go home",family,"home-1,verb-1",Common expression
+# DAILY EXPRESSIONS
+phr-11,insha'allah,እንሻአላህ,إن شاء الله,God willing,expressions,"phrase-3",Used constantly
+phr-12,jazakallah kheyr,ጀዛክአላህ ኸይር,جزاك الله خير,may God reward you with good,expressions,"phrase-5",Thank you
+phr-13,bismillah,ቢስሚላህ,بسم الله,in the name of God,expressions,"phrase-8",Said before eating/starting
+phr-14,masha'allah,ማሻአላህ,ما شاء الله,God has willed it,expressions,"phrase-6",Expressing admiration
+phr-15,subhanallah,ሱብሓንአላህ,سبحان الله,glory to God,expressions,"phrase-7",Expressing wonder
+# CONVERSATIONAL
+phr-16,min isimakh?,ምን ኢስማኽ?,,"what is your name? (to male)",conversational,,
+phr-17,isimi ... halko,ኢስሚ ... ሃልኮ,,"my name is ...",conversational,"verb-8",
+phr-18,gey usu halko,ጌይ ኡሱ ሃልኮ,,"I am Harari",conversational,"greet-2,verb-8",Identity statement
+phr-19,gey sinan eda,ጌይ ሲናን ኤዳ,,"speak Harari",conversational,"greet-1,greet-3,verb-11",
+phr-20,ney!,ነይ!,,come!,conversational,"verb-10",Imperative
+# FOOD & HOSPITALITY
+phr-21,bun sich,ቡን ስች,,"drink coffee",food,"food-2,verb-3",
+phr-22,bismillah bila,ቢስሚላህ ቢላ,,"eat in God's name",food,"phrase-8,verb-2",Said when offering food
+phr-23,hangur or al,ሐንጉር ኦር አል,,"the food is good",food,"food-5,adj-2",Compliment
+# PROVERBS
+phr-24,gey be gey usu,ጌይ በ ጌይ ኡሱ,,"Harar belongs to the Harari people",proverbs,"greet-1,greet-2",Cultural saying
+phr-25,sinan yimotu gey yimot,ሲናን ይሞቱ ጌይ ይሞት,,"when the language dies the city dies",proverbs,"greet-1,greet-3",Language preservation proverb
+# DIRECTIONS & PLACES
+phr-26,gey let,ጌይ ለት,,"go to Harar",places,"greet-1,verb-1",
+phr-27,gar be let,ጋር በ ለት,,"go to the house",places,"home-1,verb-1",
+phr-28,ney gar,ነይ ጋር,,"come home",places,"verb-10,home-1",
+# EMOTIONAL
+phr-29,ishqi halko,ኢሸቂ ሃልኮ,,"I love (it/you)",emotional,"verb-13,verb-8",
+phr-30,ohfi,ኦህፊ,,sorry/excuse me,emotional,"social-9",Apology

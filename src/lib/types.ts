@@ -10,9 +10,6 @@ export interface Word {
   difficulty: 1 | 2 | 3;
 }
 
-// Exercise types
-export type ExerciseType = 'multiple_choice' | 'matching' | 'listening';
-
 export interface Exercise {
   type: ExerciseType;
   wordIds: string[];
@@ -54,3 +51,55 @@ export interface WordSRS {
 
 // Review quality rating (SM-2 algorithm)
 export type ReviewQuality = 0 | 1 | 2 | 3 | 4 | 5;
+
+// Recording Station types
+export type FluencyLevel = 'native' | 'fluent' | 'partial' | 'heritage';
+export type AgeRange = '18-25' | '26-35' | '36-45' | '46-55' | '56-65' | '65+';
+export type Gender = 'male' | 'female' | 'other' | 'prefer-not-to-say';
+export type RecordingMode = 'word' | 'phrase';
+
+export interface Speaker {
+  id: string;
+  name: string;
+  ageRange: AgeRange;
+  gender: Gender;
+  fluencyLevel: FluencyLevel;
+  dialectNotes: string;
+  consent: {
+    appUse: boolean;
+    languagePreservation: boolean;
+    mlTraining: boolean;
+    attribution: 'name' | 'anonymous';
+    timestamp: string; // ISO date
+  };
+  createdAt: string;
+}
+
+export interface Recording {
+  id: string;
+  speakerId: string;
+  targetId: string; // wordId or phraseId
+  mode: RecordingMode;
+  blob: Blob;
+  mimeType: string;
+  sampleRate: number;
+  duration: number; // seconds
+  quality: {
+    peakAmplitude: number;
+    clipping: boolean;
+    tooQuiet: boolean;
+  };
+  createdAt: string;
+}
+
+export interface Phrase {
+  id: string;
+  harariLatin: string;
+  harariEthiopic: string;
+  harariArabic: string;
+  english: string;
+  category: string;
+  wordIds: string[]; // component words for later segmentation
+}
+
+export type ExerciseType = 'multiple_choice' | 'matching' | 'listening' | 'script_matching' | 'production';

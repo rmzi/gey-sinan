@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Task",
+      "Bash(*)",
+      "mcp__*"
+    ],
+    "deny": [
+      "Bash(*~/.aws*)",
+      "Bash(*~/.ssh*)",
+      "Bash(*~/.gnupg*)",
+      "Bash(*~/.config/gcloud*)",
+      "Bash(*~/.databrickscfg*)",
+      "Bash(*~/.netrc*)",
+      "Bash(*$HOME/.aws*)",
+      "Bash(*$HOME/.ssh*)",
+      "Bash(*$HOME/.gnupg*)",
+      "Bash(*$HOME/.config/gcloud*)",
+      "Bash(*$HOME/.databrickscfg*)",
+      "Bash(*$HOME/.netrc*)",
+      "Bash(* --profile prod*)",
+      "Bash(* --profile=prod*)",
+      "Bash(*PROD*)",
+      "Bash(*prod.*)",
+      "Bash(ssh *)",
+      "Bash(scp *)",
+      "Bash(sftp *)",
+
+      "Bash(git push origin main)",
+      "Bash(git push origin main *)",
+      "Bash(git push origin master)",
+      "Bash(git push origin master *)",
+      "Bash(git push origin dev)",
+      "Bash(git push origin dev *)",
+      "Bash(git push origin develop)",
+      "Bash(git push origin develop *)",
+      "Bash(git push * +main)",
+      "Bash(git push * +master)",
+      "Bash(git push * +dev)",
+      "Bash(git push * +develop)",
+      "Bash(git push *:main)",
+      "Bash(git push *:main *)",
+      "Bash(git push *:master)",
+      "Bash(git push *:master *)",
+      "Bash(git push *:dev)",
+      "Bash(git push *:dev *)",
+      "Bash(git push *:develop)",
+      "Bash(git push *:develop *)",
+      "Bash(git push * :main)",
+      "Bash(git push * :master)",
+      "Bash(git push * :dev)",
+      "Bash(git push * :develop)",
+      "Bash(git push -f*)",
+      "Bash(git push --force*)",
+      "Bash(git push * --force*)",
+      "Bash(git push --delete*)",
+      "Bash(git push * --delete*)",
+
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/secrets/**)",
+      "Read(**/*.pem)",
+      "Read(**/*credential*)",
+      "Write(**/.env*)",
+      "Write(**/secrets/**)",
+      "Write(**/*.pem)",
+      "Write(**/*credential*)"
+    ],
+    "additionalDirectories": [
+      ".."
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '🧪 Consider running tests to verify changes'",
+            "async": true
+          }
+        ],
+        "matcher": "Edit|Write"
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "You are a permission evaluator for a velocity-focused dev environment. Evaluate this permission request: $ARGUMENTS\n\nALLOW routine dev operations: reading/writing source code, running tests, installing deps, git operations on feature branches, linters, formatters, builds, file search, web search/fetch.\n\nDENY: credential file access (~/.aws, ~/.ssh, ~/.gnupg, ~/.config/gcloud, ~/.netrc, .pem files), production patterns (PROD, prod.*, --profile prod), remote access (ssh, scp, sftp), push to protected branches (main/master/dev/develop), force push, .env files, secrets directories.\n\nWhen in doubt, ALLOW — explicit deny rules above are the guardrails.\n\nRespond with JSON: {\"ok\": true} to allow, or {\"ok\": false, \"reason\": \"brief reason\"} to deny.",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -64,9 +64,9 @@ for (let i = 1; i < lines.length; i++) {
 }
 
 function getCategoryDifficulty(category) {
-  const easy = ['greetings', 'numbers', 'family', 'colors', 'phrases'];
-  const medium = ['food', 'body', 'home', 'animals', 'people'];
-  const hard = ['verbs', 'pronouns'];
+  const easy = ['greetings', 'numbers', 'family', 'colors', 'phrases', 'nouns'];
+  const medium = ['food', 'body', 'home', 'animals', 'people', 'social', 'nature', 'time', 'market'];
+  const hard = ['verbs', 'pronouns', 'adjectives', 'expressions'];
 
   if (easy.includes(category)) return 1;
   if (medium.includes(category)) return 2;

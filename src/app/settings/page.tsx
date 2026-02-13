@@ -117,13 +117,20 @@ export default function SettingsPage() {
             About Gey Sinan
           </h2>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-            Gey Sinan means "our home" in Harari. This app is designed to help Harari diaspora youth
-            reconnect with their ancestral language through interactive lessons and spaced repetition.
+            Gey Sinan means "language of the city" in Harari — the language of Harar.
+            This app is designed to help Harari diaspora youth reconnect with their ancestral language
+            through interactive lessons and spaced repetition.
           </p>
-          <p className="text-sm text-gray-500 dark:text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-500 mb-4">
             Harari is an endangered Semitic language spoken in the ancient walled city of Harar, Ethiopia,
             and by diaspora communities worldwide.
           </p>
+          <Link
+            href="/about"
+            className="text-sm text-emerald-600 dark:text-emerald-400 hover:underline font-medium"
+          >
+            Learn more about this project
+          </Link>
         </section>
 
         {/* Reset */}
