@@ -145,13 +145,13 @@ export const useProgress = create<ProgressStore>()(
 
       getLessonStatus: (lessonId) => {
         const { lessonProgress } = get();
-        return lessonProgress[lessonId] || 'locked';
+        return lessonProgress[lessonId] || 'available';  // DEV: all lessons unlocked
       },
 
       isLessonUnlocked: (lessonId) => {
         const { lessonProgress } = get();
         const status = lessonProgress[lessonId];
-        return status === 'available' || status === 'in_progress' || status === 'completed';
+        return true;  // DEV: all lessons unlocked
       },
     }),
     {
