@@ -25,6 +25,10 @@ This plan covers the migration from Next.js to Expo, the creation of a Django ba
 | Domain | Route 53 | Easy DNS + ACM cert management for all subdomains. |
 | Database | PostgreSQL on RDS | Dev + prod instances, same account, separated by naming/tags. |
 | Observability | Sentry + Grafana Cloud | Sentry for errors/perf, Grafana Cloud for metrics/logs/dashboards. Both free tier. |
+| Product analytics | Sentry + Grafana (no new tools) | Tag Sentry transactions with product context. Structured Django logging -> Grafana Loki. No custom event tables. |
+| Census | TABLED | Too risky for v1. Community data in wrong hands is dangerous. Document as future possibility only. |
+| Households | Social feature (not census) | Family learning groups with invite codes. No demographic questions. Community insight emerges passively from usage. |
+| App icon | Mo'ot (woven basket) | NOT Ge'ez ጌ — Amharic cultural dominance associations. Ramzi providing reference images for Yesmin. |
 | Pre-commit | pre-commit framework | Ruff (Python), ESLint (TS), secrets detection, no-commit-to-main. Foolproof for contributors. |
 
 ## Architecture
@@ -347,7 +351,8 @@ GitHub OIDC provider -> IAM role (no long-lived AWS keys in secrets).
 | 5.2 Backup strategy | RDS automated backups (30-day), S3 versioning, prod->dev sync via pg_dump + scrub |
 | 5.3 App Store prep | EAS build, icons, splash screens, store listings |
 | 5.4 E2E tests | Maestro flows for critical paths |
-| 5.5 Analytics | User signup counts, recording stats, learning aggregates (Django admin dashboard) |
+| 5.5 Analytics | Structured Django logging -> Grafana Loki dashboards. Sentry custom tags on key transactions. No custom event models. |
+| 5.6 Households | Household model + invite code flow + family progress view. Social feature, NOT census. |
 
 ## Key Migration Details
 
@@ -368,9 +373,11 @@ GitHub OIDC provider -> IAM role (no long-lived AWS keys in secrets).
 ### Django models (key relationships):
 - **Word** <- Sentence (FK), Recording (FK), UserProgress (FK)
 - **Lesson** <- Word (M2M), UserLessonProgress (FK)
-- **Speaker** <- Recording (FK)
+- **Speaker** <- Recording (FK). Add `email` field for volunteer re-engagement.
 - **DictionaryEntry** -> Word (nullable FK, for promoted entries)
 - **User** <- UserProgress, UserLessonProgress, UserStreak (OneToOne)
+- **Household** (social feature) — code (4-char, charset ABCDEFGHJKMNPQRSTUVWXYZ23456789), name (optional), city (optional), created_at. User gets optional household_code FK.
+- NOTE: No CensusResponse model. Census is tabled. Household is purely a social/engagement feature.
 
 ### RBAC:
 | Role | Permissions |
@@ -386,6 +393,15 @@ GitHub OIDC provider -> IAM role (no long-lived AWS keys in secrets).
 2. **Apple OAuth**: Requires Apple Developer Program ($99/yr). Defer until iOS app is ready for App Store.
 3. **NAT Gateway cost**: $32/month minimum. Consider NAT instance or VPC endpoints for dev.
 4. **Birdie character design**: Need art assets. Placeholder SVG initially.
+5. **Mo'ot icon**: Ramzi providing reference images of the woven basket for Yesmin. Replaces current Ge'ez ጌ icon.
+6. **Harari population**: ~250,000+ (not 25,000). Update docs/CLAUDE.md.
+
+## Explicitly Tabled (Future Possibilities)
+
+- **Census data collection**: Household speaker counts, fluency levels, geographic distribution survey. Risk: structured diaspora dataset could be dangerous in wrong hands. Revisit only after community trust is established and data protection strategy is mature. Document in `docs/future/census-concept.md`.
+- **Community leaderboard with demographic data**: City-level aggregates are fine passively (from analytics), but explicit community mapping is deferred.
+- **Thermal printer keepsakes**: Physical artifacts at recording events. Nice-to-have, not v1.
+- **NFC charms**: 3D printed cultural objects with App Store links. Deferred.
 
 ## Estimated Monthly AWS Cost
 

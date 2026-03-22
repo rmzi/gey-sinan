@@ -35,6 +35,7 @@ class Speaker(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
+    email = models.EmailField(blank=True, default='', help_text='Optional. For volunteer re-engagement and contribution notifications.')
     age_range = models.CharField(max_length=10, choices=AGE_RANGE_CHOICES)
     gender = models.CharField(max_length=20, choices=GENDER_CHOICES)
     fluency_level = models.CharField(max_length=20, choices=FLUENCY_CHOICES)
