@@ -44,7 +44,7 @@ body {
 
 /* Arabic font support */
 .font-arabic {
-  font-family: 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+  font-family: var(--font-amiri), 'Scheherazade New', 'Traditional Arabic', serif;
 }
 
 /* Ethiopic font support */
