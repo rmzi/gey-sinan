@@ -1,0 +1,2372 @@
+[
+  {
+    "id": "num-1",
+    "harariLatin": "ahad",
+    "harariEthiopic": "አሐድ",
+    "harariArabic": "اهاد",
+    "english": "one",
+    "audioUrl": "/audio/ahad.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-2",
+    "harariLatin": "kot",
+    "harariEthiopic": "ኮት",
+    "harariArabic": "كوت",
+    "english": "two",
+    "audioUrl": "/audio/kot.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-3",
+    "harariLatin": "shishti",
+    "harariEthiopic": "ሽሽቲ",
+    "harariArabic": "شيشتي",
+    "english": "three",
+    "audioUrl": "/audio/shishti.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-4",
+    "harariLatin": "harad",
+    "harariEthiopic": "ሀራድ",
+    "harariArabic": "هاراد",
+    "english": "four",
+    "audioUrl": "/audio/harad.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-5",
+    "harariLatin": "hamisti",
+    "harariEthiopic": "ሀምስቲ",
+    "harariArabic": "هاميستي",
+    "english": "five",
+    "audioUrl": "/audio/hamisti.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-6",
+    "harariLatin": "saddisti",
+    "harariEthiopic": "ሳዲስቲ",
+    "harariArabic": "سادّيستي",
+    "english": "six",
+    "audioUrl": "/audio/saddisti.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-7",
+    "harariLatin": "sati",
+    "harariEthiopic": "ሳቲ",
+    "harariArabic": "ساتي",
+    "english": "seven",
+    "audioUrl": "/audio/sati.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-8",
+    "harariLatin": "sot",
+    "harariEthiopic": "ሶት",
+    "harariArabic": "سوت",
+    "english": "eight",
+    "audioUrl": "/audio/sot.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-9",
+    "harariLatin": "sehtan",
+    "harariEthiopic": "ሰህታን",
+    "harariArabic": "سيهتان",
+    "english": "nine",
+    "audioUrl": "/audio/sehtan.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-10",
+    "harariLatin": "assir",
+    "harariEthiopic": "አስር",
+    "harariArabic": "اسّير",
+    "english": "ten",
+    "audioUrl": "/audio/assir.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-20",
+    "harariLatin": "koyah",
+    "harariEthiopic": "ኮያህ",
+    "harariArabic": "كوياه",
+    "english": "twenty",
+    "audioUrl": "/audio/koyah.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "num-100",
+    "harariLatin": "bakla",
+    "harariEthiopic": "ባክላ",
+    "harariArabic": "باكلا",
+    "english": "hundred",
+    "audioUrl": "/audio/bakla.mp3",
+    "category": "numbers",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-1",
+    "harariLatin": "awa",
+    "harariEthiopic": "አዋ",
+    "harariArabic": "اوا",
+    "english": "father",
+    "audioUrl": "/audio/awa.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-1b",
+    "harariLatin": "aw",
+    "harariEthiopic": "ኣው",
+    "harariArabic": "او",
+    "english": "father",
+    "audioUrl": "/audio/aw.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-2",
+    "harariLatin": "a'e",
+    "harariEthiopic": "አእ",
+    "harariArabic": "اعي",
+    "english": "mother",
+    "audioUrl": "/audio/a-e.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-2b",
+    "harariLatin": "ay",
+    "harariEthiopic": "ኣይ",
+    "harariArabic": "اي",
+    "english": "mother",
+    "audioUrl": "/audio/ay.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-3",
+    "harariLatin": "ih",
+    "harariEthiopic": "እህ",
+    "harariArabic": "ايه",
+    "english": "brother",
+    "audioUrl": "/audio/ih.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-3b",
+    "harariLatin": "abba",
+    "harariEthiopic": "አብባ",
+    "harariArabic": "ابّا",
+    "english": "big brother",
+    "audioUrl": "/audio/abba.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-4",
+    "harariLatin": "ihit",
+    "harariEthiopic": "እሂት",
+    "harariArabic": "ايهيت",
+    "english": "sister",
+    "audioUrl": "/audio/ihit.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-4b",
+    "harariLatin": "abbaya",
+    "harariEthiopic": "አብባያ",
+    "harariArabic": "ابّايا",
+    "english": "big sister",
+    "audioUrl": "/audio/abbaya.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-5",
+    "harariLatin": "lijjay",
+    "harariEthiopic": "ልጃይ",
+    "harariArabic": "ليجّاي",
+    "english": "son",
+    "audioUrl": "/audio/lijjay.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-5b",
+    "harariLatin": "waldi",
+    "harariEthiopic": "ወልዲ",
+    "harariArabic": "والدي",
+    "english": "child (male)",
+    "audioUrl": "/audio/waldi.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-6",
+    "harariLatin": "kahat",
+    "harariEthiopic": "ካሃት",
+    "harariArabic": "كاهات",
+    "english": "daughter",
+    "audioUrl": "/audio/kahat.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-7",
+    "harariLatin": "baba",
+    "harariEthiopic": "ባባ",
+    "harariArabic": "بابا",
+    "english": "grandfather",
+    "audioUrl": "/audio/baba.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-7b",
+    "harariLatin": "bab",
+    "harariEthiopic": "ባብ",
+    "harariArabic": "باب",
+    "english": "grandfather",
+    "audioUrl": "/audio/bab.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-8",
+    "harariLatin": "umma",
+    "harariEthiopic": "ኡማ",
+    "harariArabic": "اومّا",
+    "english": "grandmother",
+    "audioUrl": "/audio/umma.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-9",
+    "harariLatin": "hamat",
+    "harariEthiopic": "ሐማት",
+    "harariArabic": "هامات",
+    "english": "mother-in-law",
+    "audioUrl": "/audio/hamat.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-10",
+    "harariLatin": "hamachi",
+    "harariEthiopic": "ሐማቺ",
+    "harariArabic": "هاماچي",
+    "english": "father-in-law",
+    "audioUrl": "/audio/hamachi.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-11",
+    "harariLatin": "absuma",
+    "harariEthiopic": "አብሱማ",
+    "harariArabic": "ابسوما",
+    "english": "grandchild",
+    "audioUrl": "/audio/absuma.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "fam-12",
+    "harariLatin": "shaqiq",
+    "harariEthiopic": "ሸቂቅ",
+    "harariArabic": "شاقيق",
+    "english": "sibling (from same mother)",
+    "audioUrl": "/audio/shaqiq.mp3",
+    "category": "family",
+    "difficulty": 1
+  },
+  {
+    "id": "body-1",
+    "harariLatin": "urus",
+    "harariEthiopic": "ኡሩስ",
+    "harariArabic": "اوروس",
+    "english": "head",
+    "audioUrl": "/audio/urus.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-2",
+    "harariLatin": "in",
+    "harariEthiopic": "እን",
+    "harariArabic": "اين",
+    "english": "eye",
+    "audioUrl": "/audio/in.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-3",
+    "harariLatin": "uf",
+    "harariEthiopic": "ኡፍ",
+    "harariArabic": "اوف",
+    "english": "nose",
+    "audioUrl": "/audio/uf.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-4",
+    "harariLatin": "uzn",
+    "harariEthiopic": "ኡዝን",
+    "harariArabic": "اوزن",
+    "english": "ear",
+    "audioUrl": "/audio/uzn.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-5",
+    "harariLatin": "afe",
+    "harariEthiopic": "አፈ",
+    "harariArabic": "افي",
+    "english": "mouth",
+    "audioUrl": "/audio/afe.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-6",
+    "harariLatin": "fit",
+    "harariEthiopic": "ፊት",
+    "harariArabic": "فيت",
+    "english": "face",
+    "audioUrl": "/audio/fit.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-7",
+    "harariLatin": "arrat",
+    "harariEthiopic": "አራት",
+    "harariArabic": "ارّات",
+    "english": "tongue",
+    "audioUrl": "/audio/arrat.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-8",
+    "harariLatin": "sin",
+    "harariEthiopic": "ስን",
+    "harariArabic": "سين",
+    "english": "tooth",
+    "audioUrl": "/audio/sin.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-9",
+    "harariLatin": "angat",
+    "harariEthiopic": "አንጋት",
+    "harariArabic": "انغات",
+    "english": "neck",
+    "audioUrl": "/audio/angat.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-10",
+    "harariLatin": "iji",
+    "harariEthiopic": "እጅ",
+    "harariArabic": "ايجي",
+    "english": "arm/hand",
+    "audioUrl": "/audio/iji.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-11",
+    "harariLatin": "ingir",
+    "harariEthiopic": "እንግር",
+    "harariArabic": "اينغير",
+    "english": "leg/foot",
+    "audioUrl": "/audio/ingir.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-12",
+    "harariLatin": "wazanah",
+    "harariEthiopic": "ወዛናህ",
+    "harariArabic": "وازاناه",
+    "english": "heart",
+    "audioUrl": "/audio/wazanah.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-13",
+    "harariLatin": "dam",
+    "harariEthiopic": "ዳም",
+    "harariArabic": "دام",
+    "english": "blood",
+    "audioUrl": "/audio/dam.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-14",
+    "harariLatin": "kub",
+    "harariEthiopic": "ኩብ",
+    "harariArabic": "كوب",
+    "english": "heel",
+    "audioUrl": "/audio/kub.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-15",
+    "harariLatin": "kut",
+    "harariEthiopic": "ኩት",
+    "harariArabic": "كوت",
+    "english": "liver",
+    "audioUrl": "/audio/kut.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "body-16",
+    "harariLatin": "kars",
+    "harariEthiopic": "ካርስ",
+    "harariArabic": "كارس",
+    "english": "belly/stomach",
+    "audioUrl": "/audio/kars.mp3",
+    "category": "body",
+    "difficulty": 2
+  },
+  {
+    "id": "color-1",
+    "harariLatin": "tay",
+    "harariEthiopic": "ታይ",
+    "harariArabic": "تاي",
+    "english": "black",
+    "audioUrl": "/audio/tay.mp3",
+    "category": "colors",
+    "difficulty": 1
+  },
+  {
+    "id": "color-2",
+    "harariLatin": "najih",
+    "harariEthiopic": "ናጅህ",
+    "harariArabic": "ناجيه",
+    "english": "white",
+    "audioUrl": "/audio/najih.mp3",
+    "category": "colors",
+    "difficulty": 1
+  },
+  {
+    "id": "color-3",
+    "harariLatin": "kayh",
+    "harariEthiopic": "ካይህ",
+    "harariArabic": "كايه",
+    "english": "red",
+    "audioUrl": "/audio/kayh.mp3",
+    "category": "colors",
+    "difficulty": 1
+  },
+  {
+    "id": "color-4",
+    "harariLatin": "dama",
+    "harariEthiopic": "ዳማ",
+    "harariArabic": "داما",
+    "english": "green",
+    "audioUrl": "/audio/dama.mp3",
+    "category": "colors",
+    "difficulty": 1
+  },
+  {
+    "id": "color-5",
+    "harariLatin": "hurdi",
+    "harariEthiopic": "ሁርዲ",
+    "harariArabic": "هوردي",
+    "english": "yellow",
+    "audioUrl": "/audio/hurdi.mp3",
+    "category": "colors",
+    "difficulty": 1
+  },
+  {
+    "id": "food-1",
+    "harariLatin": "mi",
+    "harariEthiopic": "ሚ",
+    "harariArabic": "مي",
+    "english": "water",
+    "audioUrl": "/audio/mi.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-1b",
+    "harariLatin": "miy",
+    "harariEthiopic": "ሚይ",
+    "harariArabic": "ميّ",
+    "english": "water",
+    "audioUrl": "/audio/miy.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-2",
+    "harariLatin": "bun",
+    "harariEthiopic": "ቡን",
+    "harariArabic": "بون",
+    "english": "coffee",
+    "audioUrl": "/audio/bun.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-3",
+    "harariLatin": "basar",
+    "harariEthiopic": "ባሳር",
+    "harariArabic": "باسار",
+    "english": "meat",
+    "audioUrl": "/audio/basar.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-4",
+    "harariLatin": "ukhat",
+    "harariEthiopic": "ኡኻት",
+    "harariArabic": "اوخات",
+    "english": "bread",
+    "audioUrl": "/audio/ukhat.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-5",
+    "harariLatin": "hangur",
+    "harariEthiopic": "ሐንጉር",
+    "harariArabic": "هانغور",
+    "english": "food",
+    "audioUrl": "/audio/hangur.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-6",
+    "harariLatin": "zurbyan",
+    "harariEthiopic": "ዙርቢያን",
+    "harariArabic": "زوربيان",
+    "english": "rice dish",
+    "audioUrl": "/audio/zurbyan.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-7",
+    "harariLatin": "ful",
+    "harariEthiopic": "ፉል",
+    "harariArabic": "فول",
+    "english": "fava beans",
+    "audioUrl": "/audio/ful.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-8",
+    "harariLatin": "kuskus",
+    "harariEthiopic": "ኩስኩስ",
+    "harariArabic": "كوسكوس",
+    "english": "sweet roasted food",
+    "audioUrl": "/audio/kuskus.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-9",
+    "harariLatin": "jehla",
+    "harariEthiopic": "ጀሕላ",
+    "harariArabic": "جيهلا",
+    "english": "water container (clay)",
+    "audioUrl": "/audio/jehla.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "home-1",
+    "harariLatin": "gar",
+    "harariEthiopic": "ጋር",
+    "harariArabic": "غار",
+    "english": "house",
+    "audioUrl": "/audio/gar.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-2",
+    "harariLatin": "magalah",
+    "harariEthiopic": "ማጋላህ",
+    "harariArabic": "ماغالاه",
+    "english": "town",
+    "audioUrl": "/audio/magalah.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-3",
+    "harariLatin": "isad",
+    "harariEthiopic": "እሳድ",
+    "harariArabic": "ايساد",
+    "english": "fire",
+    "audioUrl": "/audio/isad.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-4",
+    "harariLatin": "meqla",
+    "harariEthiopic": "ሜቅላ",
+    "harariArabic": "ميقلا",
+    "english": "office/workplace",
+    "audioUrl": "/audio/meqla.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-5",
+    "harariLatin": "taqet",
+    "harariEthiopic": "ጣቄት",
+    "harariArabic": "تاقيت",
+    "english": "hole in wall (traditional house)",
+    "audioUrl": "/audio/taqet.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-6",
+    "harariLatin": "derbgar",
+    "harariEthiopic": "ደርቢጋር",
+    "harariArabic": "ديربغار",
+    "english": "building/construction",
+    "audioUrl": "/audio/derbgar.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "people-1",
+    "harariLatin": "abosh",
+    "harariEthiopic": "አቦሽ",
+    "harariArabic": "ابوش",
+    "english": "man",
+    "audioUrl": "/audio/abosh.mp3",
+    "category": "people",
+    "difficulty": 2
+  },
+  {
+    "id": "people-2",
+    "harariLatin": "indosh",
+    "harariEthiopic": "እንዶሽ",
+    "harariArabic": "ايندوش",
+    "english": "woman",
+    "audioUrl": "/audio/indosh.mp3",
+    "category": "people",
+    "difficulty": 2
+  },
+  {
+    "id": "animal-1",
+    "harariLatin": "faras",
+    "harariEthiopic": "ፋራስ",
+    "harariArabic": "فاراس",
+    "english": "horse",
+    "audioUrl": "/audio/faras.mp3",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animal-2",
+    "harariLatin": "bushshii",
+    "harariEthiopic": "ቡሽሺ",
+    "harariArabic": "بوششي",
+    "english": "dog",
+    "audioUrl": "/audio/bushshii.mp3",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animal-2b",
+    "harariLatin": "buchi",
+    "harariEthiopic": "ቡቺ",
+    "harariArabic": "بوچي",
+    "english": "dog",
+    "audioUrl": "/audio/buchi.mp3",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animal-3",
+    "harariLatin": "aduru",
+    "harariEthiopic": "አዱሩ",
+    "harariArabic": "ادورو",
+    "english": "cat",
+    "audioUrl": "/audio/aduru.mp3",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animal-4",
+    "harariLatin": "uf",
+    "harariEthiopic": "ኡፍ",
+    "harariArabic": "اوف",
+    "english": "bird",
+    "audioUrl": "/audio/uf.mp3",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "animal-5",
+    "harariLatin": "chachu",
+    "harariEthiopic": "ጫጩ",
+    "harariArabic": "چاچو",
+    "english": "baby bird/chick",
+    "audioUrl": "/audio/chachu.mp3",
+    "category": "animals",
+    "difficulty": 2
+  },
+  {
+    "id": "nature-1",
+    "harariLatin": "ir",
+    "harariEthiopic": "ኢር",
+    "harariArabic": "اير",
+    "english": "sun",
+    "audioUrl": "/audio/ir.mp3",
+    "category": "nature",
+    "difficulty": 2
+  },
+  {
+    "id": "nature-2",
+    "harariLatin": "chereqa",
+    "harariEthiopic": "ጨረቃ",
+    "harariArabic": "چيريقا",
+    "english": "moon",
+    "audioUrl": "/audio/chereqa.mp3",
+    "category": "nature",
+    "difficulty": 2
+  },
+  {
+    "id": "nature-3",
+    "harariLatin": "wahri",
+    "harariEthiopic": "ዋሕሪ",
+    "harariArabic": "واهري",
+    "english": "moon",
+    "audioUrl": "/audio/wahri.mp3",
+    "category": "nature",
+    "difficulty": 2
+  },
+  {
+    "id": "nature-4",
+    "harariLatin": "lefu",
+    "harariEthiopic": "ለፉ",
+    "harariArabic": "ليفو",
+    "english": "tree",
+    "audioUrl": "/audio/lefu.mp3",
+    "category": "nature",
+    "difficulty": 2
+  },
+  {
+    "id": "nature-5",
+    "harariLatin": "zagami",
+    "harariEthiopic": "ዘጋሚ",
+    "harariArabic": "زاغامي",
+    "english": "types of tree",
+    "audioUrl": "/audio/zagami.mp3",
+    "category": "nature",
+    "difficulty": 2
+  },
+  {
+    "id": "nature-6",
+    "harariLatin": "gartira",
+    "harariEthiopic": "ጋርቲራ",
+    "harariArabic": "غارتيرا",
+    "english": "juniper tree",
+    "audioUrl": "/audio/gartira.mp3",
+    "category": "nature",
+    "difficulty": 2
+  },
+  {
+    "id": "nature-7",
+    "harariLatin": "diz",
+    "harariEthiopic": "ዲዝ",
+    "harariArabic": "ديز",
+    "english": "waterfall",
+    "audioUrl": "/audio/diz.mp3",
+    "category": "nature",
+    "difficulty": 2
+  },
+  {
+    "id": "time-1",
+    "harariLatin": "ayam",
+    "harariEthiopic": "አያም",
+    "harariArabic": "ايام",
+    "english": "day",
+    "audioUrl": "/audio/ayam.mp3",
+    "category": "time",
+    "difficulty": 2
+  },
+  {
+    "id": "time-2",
+    "harariLatin": "moy",
+    "harariEthiopic": "ሞይ",
+    "harariArabic": "موي",
+    "english": "day",
+    "audioUrl": "/audio/moy.mp3",
+    "category": "time",
+    "difficulty": 2
+  },
+  {
+    "id": "time-3",
+    "harariLatin": "mishet",
+    "harariEthiopic": "ሚሼት",
+    "harariArabic": "ميشيت",
+    "english": "night",
+    "audioUrl": "/audio/mishet.mp3",
+    "category": "time",
+    "difficulty": 2
+  },
+  {
+    "id": "time-4",
+    "harariLatin": "orti",
+    "harariEthiopic": "ኦርቲ",
+    "harariArabic": "اورتي",
+    "english": "night",
+    "audioUrl": "/audio/orti.mp3",
+    "category": "time",
+    "difficulty": 2
+  },
+  {
+    "id": "time-5",
+    "harariLatin": "amshasha",
+    "harariEthiopic": "አምሻሻ",
+    "harariArabic": "امشاشا",
+    "english": "nightfall",
+    "audioUrl": "/audio/amshasha.mp3",
+    "category": "time",
+    "difficulty": 2
+  },
+  {
+    "id": "time-6",
+    "harariLatin": "mihdar",
+    "harariEthiopic": "ሚሕዳር",
+    "harariArabic": "ميهدار",
+    "english": "sleeping time",
+    "audioUrl": "/audio/mihdar.mp3",
+    "category": "time",
+    "difficulty": 2
+  },
+  {
+    "id": "time-7",
+    "harariLatin": "mawlud",
+    "harariEthiopic": "መውሉድ",
+    "harariArabic": "ماولود",
+    "english": "birthday/maulid",
+    "audioUrl": "/audio/mawlud.mp3",
+    "category": "time",
+    "difficulty": 2
+  },
+  {
+    "id": "pron-1",
+    "harariLatin": "an",
+    "harariEthiopic": "አን",
+    "harariArabic": "ان",
+    "english": "I",
+    "audioUrl": "/audio/an.mp3",
+    "category": "pronouns",
+    "difficulty": 3
+  },
+  {
+    "id": "pron-2",
+    "harariLatin": "akhakh",
+    "harariEthiopic": "አኻኽ",
+    "harariArabic": "اخاخ",
+    "english": "you (singular)",
+    "audioUrl": "/audio/akhakh.mp3",
+    "category": "pronouns",
+    "difficulty": 3
+  },
+  {
+    "id": "pron-3",
+    "harariLatin": "huwa",
+    "harariEthiopic": "ሁዋ",
+    "harariArabic": "هوّا",
+    "english": "he",
+    "audioUrl": "/audio/huwa.mp3",
+    "category": "pronouns",
+    "difficulty": 3
+  },
+  {
+    "id": "pron-4",
+    "harariLatin": "itta",
+    "harariEthiopic": "እታ",
+    "harariArabic": "ايتّا",
+    "english": "she",
+    "audioUrl": "/audio/itta.mp3",
+    "category": "pronouns",
+    "difficulty": 3
+  },
+  {
+    "id": "pron-5",
+    "harariLatin": "inyash",
+    "harariEthiopic": "እንያሽ",
+    "harariArabic": "اينياش",
+    "english": "we",
+    "audioUrl": "/audio/inyash.mp3",
+    "category": "pronouns",
+    "difficulty": 3
+  },
+  {
+    "id": "pron-6",
+    "harariLatin": "hiyyash",
+    "harariEthiopic": "ሂያሽ",
+    "harariArabic": "هيّياش",
+    "english": "they",
+    "audioUrl": "/audio/hiyyash.mp3",
+    "category": "pronouns",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-1",
+    "harariLatin": "let",
+    "harariEthiopic": "ለት",
+    "harariArabic": "ليت",
+    "english": "go",
+    "audioUrl": "/audio/let.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-1b",
+    "harariLatin": "lex",
+    "harariEthiopic": "ሌጥ",
+    "harariArabic": "ليخ",
+    "english": "go",
+    "audioUrl": "/audio/lex.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-2",
+    "harariLatin": "bila",
+    "harariEthiopic": "ቢላ",
+    "harariArabic": "بيلا",
+    "english": "eat",
+    "audioUrl": "/audio/bila.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-3",
+    "harariLatin": "sich",
+    "harariEthiopic": "ስች",
+    "harariArabic": "سيچ",
+    "english": "drink",
+    "audioUrl": "/audio/sich.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-4",
+    "harariLatin": "sit",
+    "harariEthiopic": "ስት",
+    "harariArabic": "سيت",
+    "english": "give",
+    "audioUrl": "/audio/sit.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-5",
+    "harariLatin": "gidal",
+    "harariEthiopic": "ጊዳል",
+    "harariArabic": "غيدال",
+    "english": "kill",
+    "audioUrl": "/audio/gidal.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-6",
+    "harariLatin": "fir",
+    "harariEthiopic": "ፊር",
+    "harariArabic": "فير",
+    "english": "fear",
+    "audioUrl": "/audio/fir.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-7",
+    "harariLatin": "haych",
+    "harariEthiopic": "ሃይች",
+    "harariArabic": "هايچ",
+    "english": "see/look",
+    "audioUrl": "/audio/haych.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-8",
+    "harariLatin": "halko",
+    "harariEthiopic": "ሃልኮ",
+    "harariArabic": "هالكو",
+    "english": "I am",
+    "audioUrl": "/audio/halko.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-9",
+    "harariLatin": "narkho",
+    "harariEthiopic": "ናርኾ",
+    "harariArabic": "نارخو",
+    "english": "I was",
+    "audioUrl": "/audio/narkho.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-10",
+    "harariLatin": "ney",
+    "harariEthiopic": "ነይ",
+    "harariArabic": "نيّ",
+    "english": "come",
+    "audioUrl": "/audio/ney.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-11",
+    "harariLatin": "eda",
+    "harariEthiopic": "ኤዳ",
+    "harariArabic": "ايدا",
+    "english": "speak",
+    "audioUrl": "/audio/eda.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-12",
+    "harariLatin": "magnit",
+    "harariEthiopic": "መኚት",
+    "harariArabic": "ماغنيت",
+    "english": "sleep",
+    "audioUrl": "/audio/magnit.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-13",
+    "harariLatin": "ishqi",
+    "harariEthiopic": "ኢሸቂ",
+    "harariArabic": "ايشقي",
+    "english": "love",
+    "audioUrl": "/audio/ishqi.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-14",
+    "harariLatin": "mesheq",
+    "harariEthiopic": "መሸቅ",
+    "harariArabic": "ميشيق",
+    "english": "to love/adore",
+    "audioUrl": "/audio/mesheq.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-15",
+    "harariLatin": "dilaga",
+    "harariEthiopic": "ዲላገ",
+    "harariArabic": "ديلاغا",
+    "english": "work",
+    "audioUrl": "/audio/dilaga.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-16",
+    "harariLatin": "wereda",
+    "harariEthiopic": "ወረዳ",
+    "harariArabic": "ويريدا",
+    "english": "come down",
+    "audioUrl": "/audio/wereda.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-17",
+    "harariLatin": "qereba",
+    "harariEthiopic": "ቀረባ",
+    "harariArabic": "قيريبا",
+    "english": "come forward",
+    "audioUrl": "/audio/qereba.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-18",
+    "harariLatin": "gergeb",
+    "harariEthiopic": "ገርገብ",
+    "harariArabic": "غيرغيب",
+    "english": "go back",
+    "audioUrl": "/audio/gergeb.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-1",
+    "harariLatin": "bereh",
+    "harariEthiopic": "በረሕ",
+    "harariArabic": "بيريه",
+    "english": "good",
+    "audioUrl": "/audio/bereh.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-2",
+    "harariLatin": "or",
+    "harariEthiopic": "ኦር",
+    "harariArabic": "اور",
+    "english": "good",
+    "audioUrl": "/audio/or.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-3",
+    "harariLatin": "bulul",
+    "harariEthiopic": "ቡሉል",
+    "harariArabic": "بولول",
+    "english": "bad/corrupt",
+    "audioUrl": "/audio/bulul.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-4",
+    "harariLatin": "ari",
+    "harariEthiopic": "አሪ",
+    "harariArabic": "اري",
+    "english": "bad",
+    "audioUrl": "/audio/ari.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-5",
+    "harariLatin": "gidir",
+    "harariEthiopic": "ጊዲር",
+    "harariArabic": "غيدير",
+    "english": "big",
+    "audioUrl": "/audio/gidir.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-6",
+    "harariLatin": "jabir",
+    "harariEthiopic": "ጀባቢር",
+    "harariArabic": "جابير",
+    "english": "very big",
+    "audioUrl": "/audio/jabir.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-7",
+    "harariLatin": "xit",
+    "harariEthiopic": "ጢት",
+    "harariArabic": "خيت",
+    "english": "small",
+    "audioUrl": "/audio/xit.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-8",
+    "harariLatin": "yansi",
+    "harariEthiopic": "ያንሲ",
+    "harariArabic": "يانسي",
+    "english": "small/not enough",
+    "audioUrl": "/audio/yansi.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-9",
+    "harariLatin": "qoram",
+    "harariEthiopic": "ቆራም",
+    "harariArabic": "قورام",
+    "english": "beautiful",
+    "audioUrl": "/audio/qoram.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-10",
+    "harariLatin": "tuba",
+    "harariEthiopic": "ጡባ",
+    "harariArabic": "توبا",
+    "english": "beautiful",
+    "audioUrl": "/audio/tuba.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-11",
+    "harariLatin": "damam",
+    "harariEthiopic": "ደማም",
+    "harariArabic": "دامام",
+    "english": "pretty",
+    "audioUrl": "/audio/damam.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-12",
+    "harariLatin": "tasti",
+    "harariEthiopic": "ተስቲ",
+    "harariArabic": "تاستي",
+    "english": "happy",
+    "audioUrl": "/audio/tasti.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-13",
+    "harariLatin": "said",
+    "harariEthiopic": "ሰኢድ",
+    "harariArabic": "سايد",
+    "english": "happy/blessed",
+    "audioUrl": "/audio/said.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "social-1",
+    "harariLatin": "merin",
+    "harariEthiopic": "መሪኝ",
+    "harariArabic": "ميرين",
+    "english": "friend (male)",
+    "audioUrl": "/audio/merin.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "social-2",
+    "harariLatin": "daji",
+    "harariEthiopic": "ዳጂ",
+    "harariArabic": "داجي",
+    "english": "friend",
+    "audioUrl": "/audio/daji.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "social-3",
+    "harariLatin": "gel",
+    "harariEthiopic": "ጌል",
+    "harariArabic": "غيل",
+    "english": "friend (female)",
+    "audioUrl": "/audio/gel.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "social-4",
+    "harariLatin": "gezen",
+    "harariEthiopic": "ጌዘን",
+    "harariArabic": "غيزين",
+    "english": "girlfriend/love partner",
+    "audioUrl": "/audio/gezen.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "social-5",
+    "harariLatin": "sadiq",
+    "harariEthiopic": "ሰዲቅ",
+    "harariArabic": "ساديق",
+    "english": "intimate friend",
+    "audioUrl": "/audio/sadiq.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "social-6",
+    "harariLatin": "rafiq",
+    "harariEthiopic": "ረፊቅ",
+    "harariArabic": "رافيق",
+    "english": "intimate friend",
+    "audioUrl": "/audio/rafiq.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "social-7",
+    "harariLatin": "mahalak",
+    "harariEthiopic": "መሐልለቅ",
+    "harariArabic": "ماهالاك",
+    "english": "money",
+    "audioUrl": "/audio/mahalak.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "social-8",
+    "harariLatin": "qershi",
+    "harariEthiopic": "ቀርሺ",
+    "harariArabic": "قيرشي",
+    "english": "paper money",
+    "audioUrl": "/audio/qershi.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "social-9",
+    "harariLatin": "ohfi",
+    "harariEthiopic": "ኦህፊ",
+    "harariArabic": "اوهفي",
+    "english": "sorry",
+    "audioUrl": "/audio/ohfi.mp3",
+    "category": "social",
+    "difficulty": 2
+  },
+  {
+    "id": "greet-1",
+    "harariLatin": "gey",
+    "harariEthiopic": "ጌይ",
+    "harariArabic": "غيّ",
+    "english": "Harar/city/home",
+    "audioUrl": "/audio/gey.mp3",
+    "category": "greetings",
+    "difficulty": 1
+  },
+  {
+    "id": "greet-2",
+    "harariLatin": "gey usu",
+    "harariEthiopic": "ጌይ ኡሱ",
+    "harariArabic": "غيّ اوسو",
+    "english": "Harari people",
+    "audioUrl": "/audio/gey-usu.mp3",
+    "category": "greetings",
+    "difficulty": 1
+  },
+  {
+    "id": "greet-3",
+    "harariLatin": "sinan",
+    "harariEthiopic": "ሲናን",
+    "harariArabic": "سينان",
+    "english": "language",
+    "audioUrl": "/audio/sinan.mp3",
+    "category": "greetings",
+    "difficulty": 1
+  },
+  {
+    "id": "phrase-1",
+    "harariLatin": "salaam",
+    "harariEthiopic": "ሰላም",
+    "harariArabic": "سلام",
+    "english": "peace/hello",
+    "audioUrl": "/audio/salaam.mp3",
+    "category": "phrases",
+    "difficulty": 1
+  },
+  {
+    "id": "phrase-2",
+    "harariLatin": "salaam aleykum",
+    "harariEthiopic": "ሰላም ዐለይኩም",
+    "harariArabic": "سلام عليكم",
+    "english": "peace be upon you",
+    "audioUrl": "/audio/salaam-aleykum.mp3",
+    "category": "phrases",
+    "difficulty": 1
+  },
+  {
+    "id": "phrase-3",
+    "harariLatin": "insha'allah",
+    "harariEthiopic": "እንሻአላህ",
+    "harariArabic": "إن شاء الله",
+    "english": "God willing",
+    "audioUrl": "/audio/insha-allah.mp3",
+    "category": "phrases",
+    "difficulty": 1
+  },
+  {
+    "id": "phrase-4",
+    "harariLatin": "alhamdulillah",
+    "harariEthiopic": "አልሐምዱሊላህ",
+    "harariArabic": "الحمد لله",
+    "english": "praise be to God",
+    "audioUrl": "/audio/alhamdulillah.mp3",
+    "category": "phrases",
+    "difficulty": 1
+  },
+  {
+    "id": "phrase-5",
+    "harariLatin": "jazakallah",
+    "harariEthiopic": "ጀዛክአላህ",
+    "harariArabic": "جزاك الله",
+    "english": "thank you (may God reward you)",
+    "audioUrl": "/audio/jazakallah.mp3",
+    "category": "phrases",
+    "difficulty": 1
+  },
+  {
+    "id": "phrase-6",
+    "harariLatin": "masha'allah",
+    "harariEthiopic": "ማሻአላህ",
+    "harariArabic": "ما شاء الله",
+    "english": "wonderful (God has willed)",
+    "audioUrl": "/audio/masha-allah.mp3",
+    "category": "phrases",
+    "difficulty": 1
+  },
+  {
+    "id": "phrase-7",
+    "harariLatin": "subhanallah",
+    "harariEthiopic": "ሱብሓንአላህ",
+    "harariArabic": "سبحان الله",
+    "english": "glory to God",
+    "audioUrl": "/audio/subhanallah.mp3",
+    "category": "phrases",
+    "difficulty": 1
+  },
+  {
+    "id": "phrase-8",
+    "harariLatin": "bismillah",
+    "harariEthiopic": "ቢስሚላህ",
+    "harariArabic": "بسم الله",
+    "english": "in the name of God",
+    "audioUrl": "/audio/bismillah.mp3",
+    "category": "phrases",
+    "difficulty": 1
+  },
+  {
+    "id": "expr-1",
+    "harariLatin": "dad",
+    "harariEthiopic": "ደድ",
+    "harariArabic": "داد",
+    "english": "love (noun)",
+    "audioUrl": "/audio/dad.mp3",
+    "category": "expressions",
+    "difficulty": 3
+  },
+  {
+    "id": "expr-2",
+    "harariLatin": "irqet",
+    "harariEthiopic": "ኢርቀት",
+    "harariArabic": "ايرقيت",
+    "english": "heartfelt love",
+    "audioUrl": "/audio/irqet.mp3",
+    "category": "expressions",
+    "difficulty": 3
+  },
+  {
+    "id": "expr-3",
+    "harariLatin": "mehabba",
+    "harariEthiopic": "መሐብባ",
+    "harariArabic": "ميهابّا",
+    "english": "strong love",
+    "audioUrl": "/audio/mehabba.mp3",
+    "category": "expressions",
+    "difficulty": 3
+  },
+  {
+    "id": "expr-4",
+    "harariLatin": "orniت",
+    "harariEthiopic": "ኦርነት",
+    "harariArabic": "اورني",
+    "english": "good-heartedness",
+    "audioUrl": "/audio/orniت.mp3",
+    "category": "expressions",
+    "difficulty": 3
+  },
+  {
+    "id": "expr-5",
+    "harariLatin": "bukur",
+    "harariEthiopic": "ቡኹር",
+    "harariArabic": "بوكور",
+    "english": "good flavor",
+    "audioUrl": "/audio/bukur.mp3",
+    "category": "expressions",
+    "difficulty": 3
+  },
+  {
+    "id": "expr-6",
+    "harariLatin": "denboba",
+    "harariEthiopic": "ደንቦባ",
+    "harariArabic": "دينبوبا",
+    "english": "good news",
+    "audioUrl": "/audio/denboba.mp3",
+    "category": "expressions",
+    "difficulty": 3
+  },
+  {
+    "id": "expr-7",
+    "harariLatin": "limay",
+    "harariEthiopic": "ሊማይ",
+    "harariArabic": "ليماي",
+    "english": "good ending",
+    "audioUrl": "/audio/limay.mp3",
+    "category": "expressions",
+    "difficulty": 3
+  },
+  {
+    "id": "noun-1",
+    "harariLatin": "gar",
+    "harariEthiopic": "ጋር",
+    "harariArabic": "غار",
+    "english": "house",
+    "audioUrl": "/audio/gar.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-2",
+    "harariLatin": "magalah",
+    "harariEthiopic": "ማጋላህ",
+    "harariArabic": "ماغالاه",
+    "english": "town",
+    "audioUrl": "/audio/magalah.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-3",
+    "harariLatin": "abosh",
+    "harariEthiopic": "አቦሽ",
+    "harariArabic": "ابوش",
+    "english": "man",
+    "audioUrl": "/audio/abosh.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-4",
+    "harariLatin": "indosh",
+    "harariEthiopic": "እንዶሽ",
+    "harariArabic": "ايندوش",
+    "english": "woman",
+    "audioUrl": "/audio/indosh.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-5",
+    "harariLatin": "mi",
+    "harariEthiopic": "ሚ",
+    "harariArabic": "مي",
+    "english": "water",
+    "audioUrl": "/audio/mi.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-6",
+    "harariLatin": "isad",
+    "harariEthiopic": "እሳድ",
+    "harariArabic": "ايساد",
+    "english": "fire",
+    "audioUrl": "/audio/isad.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-7",
+    "harariLatin": "bun",
+    "harariEthiopic": "ቡን",
+    "harariArabic": "بون",
+    "english": "coffee",
+    "audioUrl": "/audio/bun.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-8",
+    "harariLatin": "basar",
+    "harariEthiopic": "ባሳር",
+    "harariArabic": "باسار",
+    "english": "meat",
+    "audioUrl": "/audio/basar.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-9",
+    "harariLatin": "ukhat",
+    "harariEthiopic": "ኡኻት",
+    "harariArabic": "اوخات",
+    "english": "bread",
+    "audioUrl": "/audio/ukhat.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-10",
+    "harariLatin": "faras",
+    "harariEthiopic": "ፋራስ",
+    "harariArabic": "فاراس",
+    "english": "horse",
+    "audioUrl": "/audio/faras.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "noun-11",
+    "harariLatin": "buchi",
+    "harariEthiopic": "ቡቺ",
+    "harariArabic": "بوچي",
+    "english": "dog",
+    "audioUrl": "/audio/buchi.mp3",
+    "category": "nouns",
+    "difficulty": 1
+  },
+  {
+    "id": "verb-19",
+    "harariLatin": "aga",
+    "harariEthiopic": "አጋ",
+    "harariArabic": "اغا",
+    "english": "know",
+    "audioUrl": "/audio/aga.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-20",
+    "harariLatin": "agana",
+    "harariEthiopic": "አጋና",
+    "harariArabic": "اغانا",
+    "english": "find/get/obtain",
+    "audioUrl": "/audio/agana.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-21",
+    "harariLatin": "agala",
+    "harariEthiopic": "አጋላ",
+    "harariArabic": "اغالا",
+    "english": "begin/start",
+    "audioUrl": "/audio/agala.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-22",
+    "harariLatin": "asema",
+    "harariEthiopic": "አሰማ",
+    "harariArabic": "اسيما",
+    "english": "sell",
+    "audioUrl": "/audio/asema.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-23",
+    "harariLatin": "afatara",
+    "harariEthiopic": "አፋተራ",
+    "harariArabic": "افاتارا",
+    "english": "feed/give to eat",
+    "audioUrl": "/audio/afatara.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-24",
+    "harariLatin": "atlamada",
+    "harariEthiopic": "አትላማዳ",
+    "harariArabic": "اتلامادا",
+    "english": "teach",
+    "audioUrl": "/audio/atlamada.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-25",
+    "harariLatin": "fairaka",
+    "harariEthiopic": "ፋይራካ",
+    "harariArabic": "فايراكا",
+    "english": "can/be able",
+    "audioUrl": "/audio/fairaka.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-26",
+    "harariLatin": "alxasa",
+    "harariEthiopic": "አልኻሳ",
+    "harariArabic": "الخاسا",
+    "english": "need/be necessary",
+    "audioUrl": "/audio/alxasa.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-27",
+    "harariLatin": "dalaga",
+    "harariEthiopic": "ዳላጋ",
+    "harariArabic": "دالاغا",
+    "english": "cultivate/prepare land",
+    "audioUrl": "/audio/dalaga.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-28",
+    "harariLatin": "asenana",
+    "harariEthiopic": "አሰናና",
+    "harariArabic": "اسينانا",
+    "english": "talk/call someone",
+    "audioUrl": "/audio/asenana.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-29",
+    "harariLatin": "agaddra",
+    "harariEthiopic": "አጋድራ",
+    "harariArabic": "اغادّرا",
+    "english": "honor/celebrate/respect",
+    "audioUrl": "/audio/agaddra.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-30",
+    "harariLatin": "sabara",
+    "harariEthiopic": "ሰበራ",
+    "harariArabic": "سابارا",
+    "english": "break",
+    "audioUrl": "/audio/sabara.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-31",
+    "harariLatin": "fataha",
+    "harariEthiopic": "ፋተሃ",
+    "harariArabic": "فاتاها",
+    "english": "open",
+    "audioUrl": "/audio/fataha.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-32",
+    "harariLatin": "aqfala",
+    "harariEthiopic": "አቅፋላ",
+    "harariArabic": "اقفالا",
+    "english": "close/lock",
+    "audioUrl": "/audio/aqfala.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-33",
+    "harariLatin": "dhahaka",
+    "harariEthiopic": "ደሐካ",
+    "harariArabic": "ذاهاكا",
+    "english": "laugh",
+    "audioUrl": "/audio/dhahaka.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-34",
+    "harariLatin": "bakaya",
+    "harariEthiopic": "ባካያ",
+    "harariArabic": "باكايا",
+    "english": "cry/weep",
+    "audioUrl": "/audio/bakaya.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-35",
+    "harariLatin": "wasada",
+    "harariEthiopic": "ወሰዳ",
+    "harariArabic": "واسادا",
+    "english": "take/carry",
+    "audioUrl": "/audio/wasada.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "verb-36",
+    "harariLatin": "satana",
+    "harariEthiopic": "ሰተና",
+    "harariArabic": "ساتانا",
+    "english": "listen",
+    "audioUrl": "/audio/satana.mp3",
+    "category": "verbs",
+    "difficulty": 3
+  },
+  {
+    "id": "food-10",
+    "harariLatin": "aquh",
+    "harariEthiopic": "አቁህ",
+    "harariArabic": "اقوه",
+    "english": "egg",
+    "audioUrl": "/audio/aquh.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-11",
+    "harariLatin": "aqlel",
+    "harariEthiopic": "አቅሌል",
+    "harariArabic": "اقليل",
+    "english": "well-prepared sauce",
+    "audioUrl": "/audio/aqlel.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-12",
+    "harariLatin": "dabbo",
+    "harariEthiopic": "ደብቦ",
+    "harariArabic": "دابّو",
+    "english": "wheat bread",
+    "audioUrl": "/audio/dabbo.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-13",
+    "harariLatin": "basso",
+    "harariEthiopic": "ባሶ",
+    "harariArabic": "باسّو",
+    "english": "roasted barley flour",
+    "audioUrl": "/audio/basso.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-14",
+    "harariLatin": "bisaya",
+    "harariEthiopic": "ቢሳያ",
+    "harariArabic": "بيسايا",
+    "english": "fruit",
+    "audioUrl": "/audio/bisaya.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-15",
+    "harariLatin": "aynab",
+    "harariEthiopic": "አይናብ",
+    "harariArabic": "ايناب",
+    "english": "grape",
+    "audioUrl": "/audio/aynab.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-16",
+    "harariLatin": "dar bissi",
+    "harariEthiopic": "ዳር ቢሲ",
+    "harariArabic": "دار بيسّي",
+    "english": "lemon",
+    "audioUrl": "/audio/dar-bissi.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-17",
+    "harariLatin": "baharo",
+    "harariEthiopic": "ባሐሮ",
+    "harariArabic": "باهارو",
+    "english": "onion",
+    "audioUrl": "/audio/baharo.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-18",
+    "harariLatin": "buntur",
+    "harariEthiopic": "ቡንቱር",
+    "harariArabic": "بونتور",
+    "english": "fried dough in honey",
+    "audioUrl": "/audio/buntur.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-19",
+    "harariLatin": "dalan",
+    "harariEthiopic": "ዳላን",
+    "harariArabic": "دالان",
+    "english": "honey butter and sesame dish",
+    "audioUrl": "/audio/dalan.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-20",
+    "harariLatin": "abisala",
+    "harariEthiopic": "አቢሳላ",
+    "harariArabic": "ابيسالا",
+    "english": "cook",
+    "audioUrl": "/audio/abisala.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-21",
+    "harariLatin": "amasara",
+    "harariEthiopic": "አማሰራ",
+    "harariArabic": "اماسارا",
+    "english": "bake bread",
+    "audioUrl": "/audio/amasara.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-22",
+    "harariLatin": "afulaha",
+    "harariEthiopic": "አፉላሃ",
+    "harariArabic": "افولاها",
+    "english": "boil",
+    "audioUrl": "/audio/afulaha.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-23",
+    "harariLatin": "agalaba",
+    "harariEthiopic": "አጋላባ",
+    "harariArabic": "اغالابا",
+    "english": "roast coffee",
+    "audioUrl": "/audio/agalaba.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "food-24",
+    "harariLatin": "aissu",
+    "harariEthiopic": "አይሱ",
+    "harariArabic": "ايسّو",
+    "english": "pepper spice mix",
+    "audioUrl": "/audio/aissu.mp3",
+    "category": "food",
+    "difficulty": 2
+  },
+  {
+    "id": "home-7",
+    "harariLatin": "alawada",
+    "harariEthiopic": "አላዋዳ",
+    "harariArabic": "الاوادا",
+    "english": "kitchen",
+    "audioUrl": "/audio/alawada.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-8",
+    "harariLatin": "digadag",
+    "harariEthiopic": "ዲጋዳግ",
+    "harariArabic": "ديغاداغ",
+    "english": "wall",
+    "audioUrl": "/audio/digadag.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-9",
+    "harariLatin": "dikka",
+    "harariEthiopic": "ዲካ",
+    "harariArabic": "ديكّا",
+    "english": "roof",
+    "audioUrl": "/audio/dikka.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-10",
+    "harariLatin": "gabati",
+    "harariEthiopic": "ጋባቲ",
+    "harariArabic": "غاباتي",
+    "english": "door",
+    "audioUrl": "/audio/gabati.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-11",
+    "harariLatin": "dac",
+    "harariEthiopic": "ዳጭ",
+    "harariArabic": "داچ",
+    "english": "floor/ground",
+    "audioUrl": "/audio/dac.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-12",
+    "harariLatin": "dadu",
+    "harariEthiopic": "ዳዱ",
+    "harariArabic": "دادو",
+    "english": "sleeping mat",
+    "audioUrl": "/audio/dadu.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-13",
+    "harariLatin": "bisat",
+    "harariEthiopic": "ቢሳት",
+    "harariArabic": "بيسات",
+    "english": "wool rug",
+    "audioUrl": "/audio/bisat.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-14",
+    "harariLatin": "darbi",
+    "harariEthiopic": "ዳርቢ",
+    "harariArabic": "داربي",
+    "english": "stone house",
+    "audioUrl": "/audio/darbi.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-15",
+    "harariLatin": "das",
+    "harariEthiopic": "ዳስ",
+    "harariArabic": "داس",
+    "english": "shelter/roof-only structure",
+    "audioUrl": "/audio/das.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-16",
+    "harariLatin": "gidir magala",
+    "harariEthiopic": "ጊዲር ማጋላ",
+    "harariArabic": "غيدير ماغالا",
+    "english": "main marketplace",
+    "audioUrl": "/audio/gidir-magala.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-17",
+    "harariLatin": "dukkan",
+    "harariEthiopic": "ዱካን",
+    "harariArabic": "دوكّان",
+    "english": "shop",
+    "audioUrl": "/audio/dukkan.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "home-18",
+    "harariLatin": "masjid",
+    "harariEthiopic": "ማስጂድ",
+    "harariArabic": "ماسجيد",
+    "english": "mosque",
+    "audioUrl": "/audio/masjid.mp3",
+    "category": "home",
+    "difficulty": 2
+  },
+  {
+    "id": "market-1",
+    "harariLatin": "bayi",
+    "harariEthiopic": "ባይ",
+    "harariArabic": "باي",
+    "english": "price/cost",
+    "audioUrl": "/audio/bayi.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-2",
+    "harariLatin": "dallal",
+    "harariEthiopic": "ዳላል",
+    "harariArabic": "دالّال",
+    "english": "trader/broker",
+    "audioUrl": "/audio/dallal.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-3",
+    "harariLatin": "mihallag",
+    "harariEthiopic": "ሚሐላግ",
+    "harariArabic": "ميهالّاغ",
+    "english": "money/coins",
+    "audioUrl": "/audio/mihallag.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-4",
+    "harariLatin": "qima",
+    "harariEthiopic": "ቂማ",
+    "harariArabic": "قيما",
+    "english": "cost/price",
+    "audioUrl": "/audio/qima.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-5",
+    "harariLatin": "mammil",
+    "harariEthiopic": "ማሚል",
+    "harariArabic": "مامّيل",
+    "english": "customer",
+    "audioUrl": "/audio/mammil.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-6",
+    "harariLatin": "saq",
+    "harariEthiopic": "ሳቅ",
+    "harariArabic": "ساق",
+    "english": "small coin",
+    "audioUrl": "/audio/saq.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-7",
+    "harariLatin": "harir",
+    "harariEthiopic": "ሐሪር",
+    "harariArabic": "هارير",
+    "english": "silk/cloth",
+    "audioUrl": "/audio/harir.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-8",
+    "harariLatin": "libs",
+    "harariEthiopic": "ሊብስ",
+    "harariArabic": "ليبس",
+    "english": "clothing",
+    "audioUrl": "/audio/libs.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-9",
+    "harariLatin": "na'al",
+    "harariEthiopic": "ናዐል",
+    "harariArabic": "ناعال",
+    "english": "shoe/sandal",
+    "audioUrl": "/audio/na-al.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-10",
+    "harariLatin": "samn",
+    "harariEthiopic": "ሰምን",
+    "harariArabic": "سامن",
+    "english": "butter/ghee",
+    "audioUrl": "/audio/samn.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-11",
+    "harariLatin": "asahl",
+    "harariEthiopic": "አሰሕል",
+    "harariArabic": "اساهل",
+    "english": "honey",
+    "audioUrl": "/audio/asahl.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "market-12",
+    "harariLatin": "qat",
+    "harariEthiopic": "ቃት",
+    "harariArabic": "قات",
+    "english": "khat (plant)",
+    "audioUrl": "/audio/qat.mp3",
+    "category": "market",
+    "difficulty": 2
+  },
+  {
+    "id": "adj-14",
+    "harariLatin": "agi",
+    "harariEthiopic": "አጊ",
+    "harariArabic": "اغي",
+    "english": "wise/mature",
+    "audioUrl": "/audio/agi.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-15",
+    "harariLatin": "amin",
+    "harariEthiopic": "አሚን",
+    "harariArabic": "امين",
+    "english": "honest",
+    "audioUrl": "/audio/amin.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-16",
+    "harariLatin": "dor",
+    "harariEthiopic": "ዶር",
+    "harariArabic": "دور",
+    "english": "brave",
+    "audioUrl": "/audio/dor.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-17",
+    "harariLatin": "gaddali",
+    "harariEthiopic": "ጋዳሊ",
+    "harariArabic": "غادّالي",
+    "english": "generous",
+    "audioUrl": "/audio/gaddali.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-18",
+    "harariLatin": "tabiq",
+    "harariEthiopic": "ተቢቅ",
+    "harariArabic": "تابيق",
+    "english": "strong/strict",
+    "audioUrl": "/audio/tabiq.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-19",
+    "harariLatin": "tihin",
+    "harariEthiopic": "ቲሒን",
+    "harariArabic": "تيهين",
+    "english": "clever",
+    "audioUrl": "/audio/tihin.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-20",
+    "harariLatin": "da'if",
+    "harariEthiopic": "ደዒፍ",
+    "harariArabic": "داعيف",
+    "english": "weak",
+    "audioUrl": "/audio/da-if.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-21",
+    "harariLatin": "fula",
+    "harariEthiopic": "ፉላ",
+    "harariArabic": "فولا",
+    "english": "coward",
+    "audioUrl": "/audio/fula.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-22",
+    "harariLatin": "lihim",
+    "harariEthiopic": "ሊሒም",
+    "harariArabic": "ليهيم",
+    "english": "soft/tender/easy",
+    "audioUrl": "/audio/lihim.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-23",
+    "harariLatin": "hazin",
+    "harariEthiopic": "ሐዚን",
+    "harariArabic": "هازين",
+    "english": "sad",
+    "audioUrl": "/audio/hazin.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-24",
+    "harariLatin": "ghadab",
+    "harariEthiopic": "ገደብ",
+    "harariArabic": "غاداب",
+    "english": "angry",
+    "audioUrl": "/audio/ghadab.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-25",
+    "harariLatin": "jadid",
+    "harariEthiopic": "ጀዲድ",
+    "harariArabic": "جاديد",
+    "english": "new",
+    "audioUrl": "/audio/jadid.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-26",
+    "harariLatin": "qadim",
+    "harariEthiopic": "ቃዲም",
+    "harariArabic": "قاديم",
+    "english": "old (thing)",
+    "audioUrl": "/audio/qadim.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-27",
+    "harariLatin": "harr",
+    "harariEthiopic": "ሐር",
+    "harariArabic": "هارّ",
+    "english": "hot",
+    "audioUrl": "/audio/harr.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  },
+  {
+    "id": "adj-28",
+    "harariLatin": "barid",
+    "harariEthiopic": "ባሪድ",
+    "harariArabic": "باريد",
+    "english": "cold",
+    "audioUrl": "/audio/barid.mp3",
+    "category": "adjectives",
+    "difficulty": 3
+  }
+]

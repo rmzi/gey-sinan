@@ -1,0 +1,371 @@
+[
+  {
+    "id": "lesson-1-1",
+    "unit": 1,
+    "order": 1,
+    "title": "Greetings & Identity",
+    "description": "Learn to say hello and key Harari terms",
+    "wordIds": ["greet-1", "greet-2", "greet-3", "phrase-1", "phrase-2"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["greet-1", "greet-2", "phrase-1", "phrase-2"] },
+      { "type": "matching", "wordIds": ["greet-1", "greet-3", "phrase-1", "phrase-2"] }
+    ]
+  },
+  {
+    "id": "lesson-1-2",
+    "unit": 1,
+    "order": 2,
+    "title": "Common Phrases",
+    "description": "Essential everyday phrases",
+    "wordIds": ["phrase-1", "phrase-2", "phrase-3", "phrase-4", "phrase-5"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["phrase-1", "phrase-2", "phrase-3", "phrase-4"] },
+      { "type": "matching", "wordIds": ["phrase-3", "phrase-4", "phrase-5", "phrase-1"] }
+    ]
+  },
+  {
+    "id": "lesson-2-1",
+    "unit": 2,
+    "order": 1,
+    "title": "Immediate Family",
+    "description": "Learn words for parents and siblings",
+    "wordIds": ["fam-1", "fam-2", "fam-3", "fam-4", "fam-5", "fam-6"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["fam-1", "fam-2", "fam-3", "fam-4"] },
+      { "type": "matching", "wordIds": ["fam-1", "fam-2", "fam-5", "fam-6"] }
+    ]
+  },
+  {
+    "id": "lesson-2-2",
+    "unit": 2,
+    "order": 2,
+    "title": "Extended Family",
+    "description": "Learn words for grandparents",
+    "wordIds": ["fam-7", "fam-8"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["fam-1", "fam-2", "fam-7", "fam-8"] },
+      { "type": "matching", "wordIds": ["fam-7", "fam-8", "fam-1", "fam-2"] }
+    ]
+  },
+  {
+    "id": "lesson-3-1",
+    "unit": 3,
+    "order": 1,
+    "title": "Numbers 1-5",
+    "description": "Learn to count from one to five",
+    "wordIds": ["num-1", "num-2", "num-3", "num-4", "num-5"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["num-1", "num-2", "num-3", "num-4", "num-5"] },
+      { "type": "matching", "wordIds": ["num-1", "num-2", "num-3", "num-4"] }
+    ]
+  },
+  {
+    "id": "lesson-3-2",
+    "unit": 3,
+    "order": 2,
+    "title": "Numbers 6-10",
+    "description": "Learn to count from six to ten",
+    "wordIds": ["num-6", "num-7", "num-8", "num-9", "num-10"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["num-6", "num-7", "num-8", "num-9", "num-10"] },
+      { "type": "matching", "wordIds": ["num-6", "num-7", "num-8", "num-9"] }
+    ]
+  },
+  {
+    "id": "lesson-3-3",
+    "unit": 3,
+    "order": 3,
+    "title": "Larger Numbers",
+    "description": "Learn twenty and one hundred",
+    "wordIds": ["num-20", "num-100"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["num-10", "num-20", "num-100", "num-1"] },
+      { "type": "matching", "wordIds": ["num-20", "num-100", "num-10", "num-5"] }
+    ]
+  },
+  {
+    "id": "lesson-4-1",
+    "unit": 4,
+    "order": 1,
+    "title": "Colors",
+    "description": "Learn the basic colors",
+    "wordIds": ["color-1", "color-2", "color-3", "color-4", "color-5"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["color-1", "color-2", "color-3", "color-4"] },
+      { "type": "matching", "wordIds": ["color-1", "color-2", "color-4", "color-5"] }
+    ]
+  },
+  {
+    "id": "lesson-5-1",
+    "unit": 5,
+    "order": 1,
+    "title": "Food & Drink",
+    "description": "Learn essential food vocabulary",
+    "wordIds": ["noun-5", "noun-7", "noun-8", "noun-9"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["noun-5", "noun-7", "noun-8", "noun-9"] },
+      { "type": "matching", "wordIds": ["noun-5", "noun-7", "noun-8", "noun-9"] }
+    ]
+  },
+  {
+    "id": "lesson-6-1",
+    "unit": 6,
+    "order": 1,
+    "title": "Body Parts - Head",
+    "description": "Learn parts of the face and head",
+    "wordIds": ["body-1", "body-2", "body-3", "body-4", "body-5", "body-6"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["body-1", "body-2", "body-3", "body-4"] },
+      { "type": "matching", "wordIds": ["body-5", "body-6", "body-1", "body-2"] }
+    ]
+  },
+  {
+    "id": "lesson-6-2",
+    "unit": 6,
+    "order": 2,
+    "title": "Body Parts - Body",
+    "description": "Learn parts of the body",
+    "wordIds": ["body-7", "body-8", "body-9", "body-10", "body-11", "body-12", "body-13"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["body-9", "body-10", "body-11", "body-12"] },
+      { "type": "matching", "wordIds": ["body-7", "body-8", "body-12", "body-13"] }
+    ]
+  },
+  {
+    "id": "lesson-7-1",
+    "unit": 7,
+    "order": 1,
+    "title": "Common Verbs",
+    "description": "Learn essential action words",
+    "wordIds": ["verb-1", "verb-2", "verb-3", "verb-4", "verb-7"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["verb-1", "verb-2", "verb-3", "verb-4"] },
+      { "type": "matching", "wordIds": ["verb-1", "verb-2", "verb-3", "verb-7"] }
+    ]
+  },
+  {
+    "id": "lesson-8-1",
+    "unit": 8,
+    "order": 1,
+    "title": "Home & Places",
+    "description": "Learn vocabulary for home and locations",
+    "wordIds": ["noun-1", "noun-2", "noun-6", "greet-1"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["noun-1", "noun-2", "noun-6", "greet-1"] },
+      { "type": "matching", "wordIds": ["noun-1", "noun-2", "noun-6", "greet-1"] }
+    ]
+  },
+  {
+    "id": "lesson-9-1",
+    "unit": 9,
+    "order": 1,
+    "title": "People & Animals",
+    "description": "Learn words for people and animals",
+    "wordIds": ["noun-3", "noun-4", "noun-10", "noun-11"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["noun-3", "noun-4", "noun-10", "noun-11"] },
+      { "type": "matching", "wordIds": ["noun-3", "noun-4", "noun-10", "noun-11"] }
+    ]
+  },
+  {
+    "id": "lesson-10-1",
+    "unit": 10,
+    "order": 1,
+    "title": "Pronouns",
+    "description": "Learn personal pronouns",
+    "wordIds": ["pron-1", "pron-2", "pron-3", "pron-4", "pron-5", "pron-6"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["pron-1", "pron-2", "pron-3", "pron-4"] },
+      { "type": "matching", "wordIds": ["pron-3", "pron-4", "pron-5", "pron-6"] }
+    ]
+  },
+  {
+    "id": "lesson-11-1",
+    "unit": 11,
+    "order": 1,
+    "title": "Daily Actions I",
+    "description": "Essential verbs: know, find, begin, sell",
+    "wordIds": ["verb-19", "verb-20", "verb-21", "verb-22", "verb-25"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["verb-19", "verb-20", "verb-21", "verb-22"] },
+      { "type": "script_matching", "wordIds": ["verb-19", "verb-20", "verb-21", "verb-25"] },
+      { "type": "production", "wordIds": ["verb-19", "verb-20", "verb-22", "verb-25"] }
+    ]
+  },
+  {
+    "id": "lesson-11-2",
+    "unit": 11,
+    "order": 2,
+    "title": "Daily Actions II",
+    "description": "More verbs: teach, feed, honor, talk",
+    "wordIds": ["verb-23", "verb-24", "verb-28", "verb-29", "verb-26"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["verb-23", "verb-24", "verb-28", "verb-29"] },
+      { "type": "matching", "wordIds": ["verb-23", "verb-24", "verb-26", "verb-28"] },
+      { "type": "production", "wordIds": ["verb-24", "verb-28", "verb-29", "verb-26"] }
+    ]
+  },
+  {
+    "id": "lesson-11-3",
+    "unit": 11,
+    "order": 3,
+    "title": "Daily Actions III",
+    "description": "Physical actions: open, close, break, take",
+    "wordIds": ["verb-30", "verb-31", "verb-32", "verb-33", "verb-34", "verb-35", "verb-36"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["verb-30", "verb-31", "verb-32", "verb-33"] },
+      { "type": "script_matching", "wordIds": ["verb-34", "verb-35", "verb-36", "verb-30"] },
+      { "type": "production", "wordIds": ["verb-31", "verb-32", "verb-35", "verb-36"] }
+    ]
+  },
+  {
+    "id": "lesson-12-1",
+    "unit": 12,
+    "order": 1,
+    "title": "Ingredients",
+    "description": "Common foods: egg, bread, fruit, onion",
+    "wordIds": ["food-10", "food-12", "food-14", "food-15", "food-17"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["food-10", "food-12", "food-14", "food-15"] },
+      { "type": "script_matching", "wordIds": ["food-10", "food-12", "food-17", "food-14"] },
+      { "type": "production", "wordIds": ["food-10", "food-12", "food-15", "food-17"] }
+    ]
+  },
+  {
+    "id": "lesson-12-2",
+    "unit": 12,
+    "order": 2,
+    "title": "Traditional Foods",
+    "description": "Harari specialties and preparations",
+    "wordIds": ["food-11", "food-13", "food-16", "food-18", "food-19", "food-24"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["food-11", "food-13", "food-18", "food-24"] },
+      { "type": "matching", "wordIds": ["food-16", "food-19", "food-11", "food-13"] }
+    ]
+  },
+  {
+    "id": "lesson-12-3",
+    "unit": 12,
+    "order": 3,
+    "title": "Cooking & Coffee",
+    "description": "Learn cooking verbs and the coffee ceremony",
+    "wordIds": ["food-20", "food-21", "food-22", "food-23"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["food-20", "food-21", "food-22", "food-23"] },
+      { "type": "production", "wordIds": ["food-20", "food-21", "food-22", "food-23"] }
+    ]
+  },
+  {
+    "id": "lesson-13-1",
+    "unit": 13,
+    "order": 1,
+    "title": "Parts of the House",
+    "description": "Rooms and structure: kitchen, door, wall, roof",
+    "wordIds": ["home-7", "home-8", "home-9", "home-10", "home-11"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["home-7", "home-8", "home-9", "home-10"] },
+      { "type": "script_matching", "wordIds": ["home-7", "home-9", "home-10", "home-11"] },
+      { "type": "production", "wordIds": ["home-7", "home-10", "home-9", "home-8"] }
+    ]
+  },
+  {
+    "id": "lesson-13-2",
+    "unit": 13,
+    "order": 2,
+    "title": "Furnishings & Buildings",
+    "description": "Home items and building types",
+    "wordIds": ["home-12", "home-13", "home-14", "home-15", "home-18"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["home-12", "home-13", "home-14", "home-15"] },
+      { "type": "matching", "wordIds": ["home-12", "home-13", "home-18", "home-14"] }
+    ]
+  },
+  {
+    "id": "lesson-13-3",
+    "unit": 13,
+    "order": 3,
+    "title": "Places in Town",
+    "description": "Shops, markets, and the mosque",
+    "wordIds": ["home-16", "home-17", "home-18", "home-2"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["home-16", "home-17", "home-18", "home-2"] },
+      { "type": "production", "wordIds": ["home-16", "home-17", "home-18", "home-2"] }
+    ]
+  },
+  {
+    "id": "lesson-14-1",
+    "unit": 14,
+    "order": 1,
+    "title": "Money & Trade",
+    "description": "Essential market vocabulary: price, money, shop",
+    "wordIds": ["market-1", "market-3", "market-4", "market-6", "home-17"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["market-1", "market-3", "market-4", "market-6"] },
+      { "type": "script_matching", "wordIds": ["market-1", "market-3", "market-4", "market-6"] },
+      { "type": "production", "wordIds": ["market-1", "market-3", "market-4", "market-6"] }
+    ]
+  },
+  {
+    "id": "lesson-14-2",
+    "unit": 14,
+    "order": 2,
+    "title": "People & Goods",
+    "description": "Traders, customers, and marketplace goods",
+    "wordIds": ["market-2", "market-5", "market-7", "market-8", "market-9"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["market-2", "market-5", "market-7", "market-8"] },
+      { "type": "matching", "wordIds": ["market-7", "market-8", "market-9", "market-2"] }
+    ]
+  },
+  {
+    "id": "lesson-14-3",
+    "unit": 14,
+    "order": 3,
+    "title": "Market Specialties",
+    "description": "Butter, honey, khat, and buying/selling",
+    "wordIds": ["market-10", "market-11", "market-12", "verb-22"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["market-10", "market-11", "market-12", "verb-22"] },
+      { "type": "production", "wordIds": ["market-10", "market-11", "market-12", "verb-22"] }
+    ]
+  },
+  {
+    "id": "lesson-15-1",
+    "unit": 15,
+    "order": 1,
+    "title": "Positive Qualities",
+    "description": "Describe character: wise, brave, honest, generous",
+    "wordIds": ["adj-14", "adj-15", "adj-16", "adj-17", "adj-19"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["adj-14", "adj-15", "adj-16", "adj-17"] },
+      { "type": "script_matching", "wordIds": ["adj-14", "adj-16", "adj-17", "adj-19"] },
+      { "type": "production", "wordIds": ["adj-14", "adj-15", "adj-16", "adj-17"] }
+    ]
+  },
+  {
+    "id": "lesson-15-2",
+    "unit": 15,
+    "order": 2,
+    "title": "Feelings",
+    "description": "Emotions: happy, sad, angry, strong, weak",
+    "wordIds": ["adj-12", "adj-23", "adj-24", "adj-18", "adj-20"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["adj-12", "adj-23", "adj-24", "adj-18"] },
+      { "type": "matching", "wordIds": ["adj-12", "adj-23", "adj-20", "adj-18"] },
+      { "type": "production", "wordIds": ["adj-12", "adj-23", "adj-24", "adj-20"] }
+    ]
+  },
+  {
+    "id": "lesson-15-3",
+    "unit": 15,
+    "order": 3,
+    "title": "Descriptions",
+    "description": "Physical qualities: new, old, hot, cold, soft",
+    "wordIds": ["adj-25", "adj-26", "adj-27", "adj-28", "adj-22"],
+    "exercises": [
+      { "type": "multiple_choice", "wordIds": ["adj-25", "adj-26", "adj-27", "adj-28"] },
+      { "type": "script_matching", "wordIds": ["adj-25", "adj-27", "adj-28", "adj-22"] },
+      { "type": "production", "wordIds": ["adj-25", "adj-26", "adj-27", "adj-28"] }
+    ]
+  }
+]
