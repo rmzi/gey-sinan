@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { MMKV } from 'react-native-mmkv';
+import type { StateStorage } from 'zustand/middleware';
 import {
   UserProgress,
   ScriptType,
@@ -20,7 +21,13 @@ import { Lesson } from '@/lib/types';
 
 const lessons = lessonsData as Lesson[];
 
+const mmkvInstance = new MMKV();
 
+const mmkvStorage: StateStorage = {
+  setItem: (name, value) => mmkvInstance.set(name, value),
+  getItem: (name) => mmkvInstance.getString(name) ?? null,
+  removeItem: (name) => mmkvInstance.delete(name),
+};
 
 interface ProgressStore extends UserProgress {
   // Actions
@@ -155,7 +162,7 @@ export const useProgress = create<ProgressStore>()(
     }),
     {
       name: 'geysinan-progress',
-      storage: createJSONStorage(() => AsyncStorage),
+      storage: createJSONStorage(() => mmkvStorage),
     }
   )
 );

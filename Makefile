@@ -4,7 +4,7 @@
 # Gey Sinan — Monorepo Makefile
 # ──────────────────────────────────────────────────────────────────────────────
 
-.PHONY: help setup dev test lint clean
+.PHONY: help setup dev test lint clean expo expo-web expo-ios expo-android
 
 help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -78,6 +78,21 @@ lint: ## Run all linters (ruff for Python, eslint for TS)
 	elif [ -f package.json ]; then \
 		npx eslint src/ --ext .ts,.tsx; \
 	fi
+
+expo: ## Start Expo dev server (scan QR with Expo Go)
+	cd apps/expo && npx expo start
+
+expo-web: ## Start Expo for web browser
+	cd apps/expo && npx expo start --web
+
+expo-ios: ## Start Expo for iOS simulator
+	cd apps/expo && npx expo start --ios
+
+expo-android: ## Start Expo for Android emulator
+	cd apps/expo && npx expo start --android
+
+expo-tunnel: ## Start Expo with tunnel (for devices on different network)
+	cd apps/expo && npx expo start --tunnel
 
 clean: ## Stop containers and remove build artifacts
 	@echo "→ Stopping Docker containers..."
