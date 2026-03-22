@@ -1,0 +1,77 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: geysinan
+      POSTGRES_USER: geysinan
+      POSTGRES_PASSWORD: localdev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U geysinan"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/app
+      - ./vocabulary.csv:/vocabulary.csv:ro
+      - ./harari-dictionary.csv:/harari-dictionary.csv:ro
+      - ./phrases.csv:/phrases.csv:ro
+      - ./src:/src:ro
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+      DATABASE_URL: postgres://geysinan:localdev@db:5432/geysinan
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: insecure-dev-key-change-in-production
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  celery:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: celery -A config worker --loglevel=info
+    volumes:
+      - ./backend:/app
+      - ./vocabulary.csv:/vocabulary.csv:ro
+      - ./harari-dictionary.csv:/harari-dictionary.csv:ro
+      - ./phrases.csv:/phrases.csv:ro
+      - ./src:/src:ro
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+      DATABASE_URL: postgres://geysinan:localdev@db:5432/geysinan
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: insecure-dev-key-change-in-production
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
