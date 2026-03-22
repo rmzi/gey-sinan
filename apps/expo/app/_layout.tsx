@@ -22,5 +22,25 @@ export default function RootLayout() {
 
   if (!fontsLoaded) return null;
 
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen
+        name="learn/[lessonId]"
+        options={{
+          presentation: 'card',
+          headerShown: false,
+          animation: 'slide_from_right',
+        }}
+      />
+      <Stack.Screen
+        name="about"
+        options={{
+          presentation: 'card',
+          headerShown: false,
+          animation: 'slide_from_right',
+        }}
+      />
+    </Stack>
+  );
 }
