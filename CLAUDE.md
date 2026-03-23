@@ -65,3 +65,17 @@ AI-assisted development methodology. Skills for consistency. Agents for scale.
 - Native builds (`expo prebuild`, `expo run:ios`) generate large `ios/`/`android/` dirs with CocoaPods, Xcode projects, and signing configs that don't transfer between worktrees
 - Each worktree would need a full prebuild + pod install (~500MB, minutes of setup) and re-configuration of Xcode signing
 - Instead: do native mobile work on a single branch in the main checkout or a long-lived worktree. Use worktrees for backend, infra, and non-native frontend work that can run in parallel.
+
+## Deployment
+
+**Verified deployment workflow.** Never declare a deploy "done" without smoke-testing the live URL:
+
+1. Run the build and capture any warnings or errors
+2. Deploy to the target environment
+3. Wait 30 seconds, then curl the live URL and check for:
+   - HTTP 200 response
+   - Non-empty body (>1KB)
+   - Presence of the app's root div or key content string
+4. If any check fails, diagnose from build logs and network response, fix the issue, and redeploy
+5. Repeat until all smoke tests pass
+6. Only declare done when the live site is verified working
