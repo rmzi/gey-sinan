@@ -58,5 +58,10 @@ backend/media/
 *.tfstate.backup
 .terraform.lock.hcl
 
+# Expo / React Native (generated native dirs, Expo cache)
+.expo/
+/ios
+/android
+
 # Worktrees
 .worktrees/
