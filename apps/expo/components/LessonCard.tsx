@@ -1,5 +1,5 @@
 import { View, Text, Pressable } from 'react-native';
-import { router } from 'expo-router';
+import { Link } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Lesson } from '@/lib/types';
 import { useProgress } from '@/stores/useProgress';
@@ -16,15 +16,8 @@ export default function LessonCard({ lesson }: LessonCardProps) {
   const isCompleted = status === 'completed';
   const isInProgress = status === 'in_progress';
 
-  const handlePress = () => {
-    if (isLocked) return;
-    router.push(`/learn/${lesson.id}` as never);
-  };
-
-  return (
-    <Pressable
-      onPress={handlePress}
-      disabled={isLocked}
+  const cardContent = (
+    <View
       className={`relative p-4 rounded-xl shadow-sm ${
         isLocked
           ? 'bg-gray-100 opacity-60'
@@ -37,7 +30,7 @@ export default function LessonCard({ lesson }: LessonCardProps) {
     >
       {/* Lock overlay */}
       {isLocked && (
-        <View className="absolute inset-0 items-center justify-center z-10">
+        <View className="absolute inset-0 items-center justify-center z-10 pointer-events-none">
           <Ionicons name="lock-closed" size={32} color="#9ca3af" />
         </View>
       )}
@@ -67,6 +60,16 @@ export default function LessonCard({ lesson }: LessonCardProps) {
           </Text>
         </View>
       </View>
-    </Pressable>
+    </View>
+  );
+
+  if (isLocked) {
+    return cardContent;
+  }
+
+  return (
+    <Link href={`/learn/${lesson.id}` as any} asChild>
+      <Pressable>{cardContent}</Pressable>
+    </Link>
   );
 }

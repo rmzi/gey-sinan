@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { View, Text, ScrollView, Pressable } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -55,12 +55,12 @@ export default function HomeScreen() {
             <Text className="text-xl font-bold text-emerald-700">Gey Sinan</Text>
             <Text className="text-sm text-gray-500">Learn Harari</Text>
           </View>
-          <Pressable
+          <TouchableOpacity
             onPress={() => router.push('/about' as never)}
             className="p-2 rounded-lg"
           >
             <Ionicons name="information-circle-outline" size={24} color="#6b7280" />
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -96,7 +96,7 @@ export default function HomeScreen() {
 
         {/* Review button */}
         {wordsDueCount > 0 && (
-          <Pressable
+          <TouchableOpacity
             onPress={() => router.push('/practice' as never)}
             className="mb-6 p-4 bg-emerald-500 rounded-xl"
           >
@@ -109,7 +109,7 @@ export default function HomeScreen() {
               </View>
               <Ionicons name="chevron-forward" size={24} color="white" />
             </View>
-          </Pressable>
+          </TouchableOpacity>
         )}
 
         {/* Word stats */}

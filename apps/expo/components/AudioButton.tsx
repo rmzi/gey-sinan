@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Pressable } from 'react-native';
+import { Platform, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Audio } from 'expo-av';
 
 interface AudioButtonProps {
   audioUrl: string | null;
@@ -14,8 +13,25 @@ export default function AudioButton({ audioUrl, size = 24 }: AudioButtonProps) {
   const handlePress = async () => {
     if (!audioUrl || status !== 'idle') return;
 
+    if (Platform.OS === 'web') {
+      // Use the browser's built-in Audio API on web
+      setStatus('loading');
+      try {
+        const audio = new window.Audio(audioUrl);
+        audio.onended = () => setStatus('idle');
+        audio.onerror = () => setStatus('idle');
+        await audio.play();
+        setStatus('playing');
+      } catch {
+        setStatus('idle');
+      }
+      return;
+    }
+
+    // Native: use expo-av
     setStatus('loading');
     try {
+      const { Audio } = await import('expo-av');
       const { sound } = await Audio.Sound.createAsync(
         { uri: audioUrl },
         { shouldPlay: true }
@@ -35,7 +51,7 @@ export default function AudioButton({ audioUrl, size = 24 }: AudioButtonProps) {
   const isDisabled = !audioUrl || status !== 'idle';
 
   return (
-    <Pressable
+    <TouchableOpacity
       onPress={handlePress}
       disabled={isDisabled}
       className={`w-12 h-12 rounded-full bg-emerald-100 items-center justify-center ${
@@ -47,6 +63,6 @@ export default function AudioButton({ audioUrl, size = 24 }: AudioButtonProps) {
         size={size}
         color="#059669"
       />
-    </Pressable>
+    </TouchableOpacity>
   );
 }

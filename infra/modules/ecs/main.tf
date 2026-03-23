@@ -54,7 +54,7 @@ resource "aws_cloudwatch_log_group" "ecs" {
 
 resource "aws_security_group" "alb" {
   name        = "${var.name_prefix}-alb-sg"
-  description = "ALB — allows inbound HTTP and HTTPS from the internet"
+  description = "ALB - allows inbound HTTP and HTTPS from the internet"
   vpc_id      = var.vpc_id
 
   tags = {
@@ -64,7 +64,7 @@ resource "aws_security_group" "alb" {
 
 resource "aws_security_group" "ecs" {
   name        = "${var.name_prefix}-ecs-sg"
-  description = "ECS tasks — allows inbound from ALB only"
+  description = "ECS tasks - allows inbound from ALB only"
   vpc_id      = var.vpc_id
 
   tags = {

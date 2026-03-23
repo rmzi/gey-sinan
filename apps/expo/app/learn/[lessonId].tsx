@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { View, Text, Pressable, ScrollView, TextInput } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -148,9 +148,9 @@ export default function LessonPage() {
     return (
       <SafeAreaView className="flex-1 bg-gray-50 items-center justify-center">
         <Text className="text-xl font-semibold text-gray-900">Lesson not found</Text>
-        <Pressable onPress={() => router.back()} className="mt-4">
+        <TouchableOpacity onPress={() => router.back()} className="mt-4">
           <Text className="text-emerald-600">Go back</Text>
-        </Pressable>
+        </TouchableOpacity>
       </SafeAreaView>
     );
   }
@@ -220,14 +220,14 @@ export default function LessonPage() {
 
   return (
     <SafeAreaView className="flex-1 bg-gray-50">
-      {/* Header */}
-      <View className="bg-white border-b border-gray-200 px-4 py-4">
+      {/* Compact Header */}
+      <View className="bg-white border-b border-gray-200 px-4 py-2">
         <View className="flex-row items-center justify-between">
-          <Pressable onPress={() => router.back()}>
+          <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="close" size={24} color="#6b7280" />
-          </Pressable>
+          </TouchableOpacity>
           <View className="items-center">
-            <Text className="text-lg font-semibold text-gray-900">{lesson.title}</Text>
+            <Text className="text-base font-semibold text-gray-900">{lesson.title}</Text>
             <Text className="text-xs text-gray-500">
               {mode === 'learn' ? 'Learning' : mode === 'practice' ? 'Practice' : 'Complete'}
             </Text>
@@ -236,96 +236,99 @@ export default function LessonPage() {
         </View>
 
         {mode !== 'complete' && (
-          <View className="mt-4">
+          <View className="mt-2">
             <ProgressBar progress={mode === 'learn' ? learnProgress : practiceProgress} />
           </View>
         )}
       </View>
 
-      <ScrollView className="flex-1 px-4 py-8">
-        {/* Script toggle */}
-        <View className="items-center mb-6">
-          <ScriptToggle />
-        </View>
-
+      <View className="flex-1 px-4 pt-3 pb-4 justify-between">
         {/* Learn Mode */}
         {mode === 'learn' && currentLearnWord && (
-          <View>
-            <View className="bg-white rounded-2xl shadow-lg p-8 items-center">
-              <Text
-                style={
-                  settings.script === 'arabic'
-                    ? { fontFamily: 'Amiri-Regular', writingDirection: 'rtl' }
-                    : settings.script === 'ethiopic'
-                    ? { fontFamily: 'NotoSansEthiopic-Regular' }
-                    : undefined
-                }
-                className="text-4xl font-bold text-gray-900 mb-4 text-center"
-              >
-                {getWordInScript(currentLearnWord, settings.script)}
-              </Text>
-              <Text className="text-2xl text-gray-600 mb-6">
-                {currentLearnWord.english}
-              </Text>
-              <AudioButton audioUrl={currentLearnWord.audioUrl || null} size={28} />
+          <>
+            {/* Script toggle */}
+            <View className="items-center mb-2">
+              <ScriptToggle />
+            </View>
 
-              <View className="mt-8 pt-6 border-t border-gray-200 w-full flex-row gap-4">
-                <View className="flex-1 items-center">
-                  <Text className="text-gray-400 text-xs mb-1">Latin</Text>
-                  <Text className="text-gray-700 text-center">{currentLearnWord.harariLatin}</Text>
-                </View>
-                <View className="flex-1 items-center">
-                  <Text className="text-gray-400 text-xs mb-1">Ge'ez</Text>
-                  <Text
-                    style={{ fontFamily: 'NotoSansEthiopic-Regular' }}
-                    className="text-gray-700 text-center"
-                  >
-                    {currentLearnWord.harariEthiopic}
-                  </Text>
-                </View>
-                <View className="flex-1 items-center">
-                  <Text className="text-gray-400 text-xs mb-1">Arabic</Text>
-                  <Text
-                    style={{ fontFamily: 'Amiri-Regular', writingDirection: 'rtl' }}
-                    className="text-gray-700 text-center"
-                  >
-                    {currentLearnWord.harariArabic}
-                  </Text>
+            <View className="flex-1 justify-center">
+              <View className="bg-white rounded-2xl shadow-lg p-6 items-center">
+                <Text
+                  style={
+                    settings.script === 'arabic'
+                      ? { fontFamily: 'Amiri-Regular', writingDirection: 'rtl' }
+                      : settings.script === 'ethiopic'
+                      ? { fontFamily: 'NotoSansEthiopic-Regular' }
+                      : undefined
+                  }
+                  className="text-4xl font-bold text-gray-900 mb-3 text-center"
+                >
+                  {getWordInScript(currentLearnWord, settings.script)}
+                </Text>
+                <Text className="text-2xl text-gray-600 mb-4">
+                  {currentLearnWord.english}
+                </Text>
+                <AudioButton audioUrl={currentLearnWord.audioUrl || null} size={28} />
+
+                <View className="mt-4 pt-4 border-t border-gray-200 w-full flex-row gap-4">
+                  <View className="flex-1 items-center">
+                    <Text className="text-gray-400 text-xs mb-1">Latin</Text>
+                    <Text className="text-gray-700 text-center">{currentLearnWord.harariLatin}</Text>
+                  </View>
+                  <View className="flex-1 items-center">
+                    <Text className="text-gray-400 text-xs mb-1">Ge'ez</Text>
+                    <Text
+                      style={{ fontFamily: 'NotoSansEthiopic-Regular' }}
+                      className="text-gray-700 text-center"
+                    >
+                      {currentLearnWord.harariEthiopic}
+                    </Text>
+                  </View>
+                  <View className="flex-1 items-center">
+                    <Text className="text-gray-400 text-xs mb-1">Arabic</Text>
+                    <Text
+                      style={{ fontFamily: 'Amiri-Regular', writingDirection: 'rtl' }}
+                      className="text-gray-700 text-center"
+                    >
+                      {currentLearnWord.harariArabic}
+                    </Text>
+                  </View>
                 </View>
               </View>
             </View>
 
-            <View className="flex-row justify-between mt-6">
-              <Pressable
-                onPress={handlePreviousLearnWord}
-                disabled={learnIndex === 0}
-                className={`px-6 py-3 ${learnIndex === 0 ? 'opacity-30' : ''}`}
-              >
-                <Text className="text-gray-600">Previous</Text>
-              </Pressable>
-              <Pressable
-                onPress={handleNextLearnWord}
-                className="px-8 py-3 bg-emerald-600 rounded-xl"
-              >
-                <Text className="text-white font-medium">
-                  {learnIndex === lessonWords.length - 1 ? 'Start Practice' : 'Next'}
-                </Text>
-              </Pressable>
+            <View>
+              <View className="flex-row justify-between mt-4">
+                <TouchableOpacity
+                  onPress={handlePreviousLearnWord}
+                  disabled={learnIndex === 0}
+                  className={`px-6 py-3 ${learnIndex === 0 ? 'opacity-30' : ''}`}
+                >
+                  <Text className="text-gray-600">Previous</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={handleNextLearnWord}
+                  className="px-8 py-3 bg-emerald-600 rounded-xl"
+                >
+                  <Text className="text-white font-medium">
+                    {learnIndex === lessonWords.length - 1 ? 'Start Practice' : 'Next'}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <Text className="text-center text-sm text-gray-500 mt-2">
+                {learnIndex + 1} of {lessonWords.length}
+              </Text>
             </View>
-
-            <Text className="text-center text-sm text-gray-500 mt-4">
-              {learnIndex + 1} of {lessonWords.length}
-            </Text>
-          </View>
+          </>
         )}
 
         {/* Practice Mode - no questions available */}
         {mode === 'practice' && !currentQuestion && (
-          <View className="items-center py-12">
+          <View className="flex-1 items-center justify-center">
             <Text className="text-xl font-semibold text-gray-900 mb-4">
               Not enough words for practice
             </Text>
-            <Pressable
+            <TouchableOpacity
               onPress={() => {
                 completeLesson(lesson.id);
                 setMode('complete');
@@ -333,15 +336,16 @@ export default function LessonPage() {
               className="px-6 py-3 bg-emerald-600 rounded-xl"
             >
               <Text className="text-white font-medium">Complete Lesson</Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
         )}
 
         {/* Practice Mode */}
         {mode === 'practice' && currentQuestion && (
-          <View>
-            {/* Exercise type badge */}
-            <View className="items-center mb-4">
+          <>
+            {/* Script toggle + exercise badge row */}
+            <View className="flex-row items-center justify-between mb-2">
+              <ScriptToggle />
               <View className="px-3 py-1 bg-blue-100 rounded-full">
                 <Text className="text-xs font-medium text-blue-700">
                   {currentQuestion.type === 'multiple_choice' && 'Multiple Choice'}
@@ -352,16 +356,16 @@ export default function LessonPage() {
               </View>
             </View>
 
-            {/* Question card */}
-            <View className="bg-white rounded-2xl shadow-lg p-8 items-center mb-6">
-              <Text className="text-sm text-gray-500 mb-2">{currentQuestion.prompt}</Text>
+            {/* Question card - compact */}
+            <View className="bg-white rounded-xl shadow-sm p-4 items-center mb-3">
+              <Text className="text-xs text-gray-500 mb-1">{currentQuestion.prompt}</Text>
 
               {currentQuestion.type === 'production' ? (
-                <Text className="text-3xl font-bold text-gray-900 mb-4">
+                <Text className="text-2xl font-bold text-gray-900">
                   {currentQuestion.word.english}
                 </Text>
               ) : currentQuestion.type === 'script_matching' ? (
-                <Text className="text-3xl font-bold text-gray-900 mb-4">
+                <Text className="text-2xl font-bold text-gray-900">
                   {currentQuestion.word.harariLatin}
                 </Text>
               ) : (
@@ -373,106 +377,112 @@ export default function LessonPage() {
                       ? { fontFamily: 'NotoSansEthiopic-Regular' }
                       : undefined
                   }
-                  className="text-3xl font-bold text-gray-900 mb-4 text-center"
+                  className="text-2xl font-bold text-gray-900 text-center"
                 >
                   {getWordInScript(currentQuestion.word, settings.script)}
                 </Text>
               )}
-              <AudioButton audioUrl={currentQuestion.word.audioUrl || null} />
+              <AudioButton audioUrl={currentQuestion.word.audioUrl || null} size={20} />
             </View>
 
-            {/* Production answer input */}
-            {currentQuestion.type === 'production' ? (
-              <View className="gap-4">
-                <TextInput
-                  value={typedAnswer}
-                  onChangeText={setTypedAnswer}
-                  onSubmitEditing={() => {
-                    if (!showResult) handleProductionSubmit();
-                    else handleNextQuestion();
-                  }}
-                  placeholder="Type the Harari word..."
-                  editable={!showResult}
-                  className={`w-full p-4 text-lg rounded-xl border-2 text-gray-900 ${
-                    showResult
-                      ? typedAnswer.trim().toLowerCase() === currentQuestion.correctAnswer
-                        ? 'border-emerald-500 bg-emerald-50'
-                        : 'border-red-500 bg-red-50'
-                      : 'border-gray-200 bg-white'
-                  }`}
-                />
-
-                {showResult && typedAnswer.trim().toLowerCase() !== currentQuestion.correctAnswer && (
-                  <Text className="text-center text-emerald-600 font-medium">
-                    Correct: {currentQuestion.word.harariLatin}
-                  </Text>
-                )}
-
-                {!showResult && (
-                  <Pressable
-                    onPress={handleProductionSubmit}
-                    disabled={typedAnswer.trim().length === 0}
-                    className={`w-full py-3 bg-emerald-600 rounded-xl items-center ${
-                      typedAnswer.trim().length === 0 ? 'opacity-50' : ''
+            {/* Answers area - flex to fill remaining space */}
+            <View className="flex-1 justify-center">
+              {/* Production answer input */}
+              {currentQuestion.type === 'production' ? (
+                <View className="gap-3">
+                  <TextInput
+                    value={typedAnswer}
+                    onChangeText={setTypedAnswer}
+                    onSubmitEditing={() => {
+                      if (!showResult) handleProductionSubmit();
+                      else handleNextQuestion();
+                    }}
+                    placeholder="Type the Harari word..."
+                    editable={!showResult}
+                    className={`w-full p-3 text-lg rounded-xl border-2 text-gray-900 ${
+                      showResult
+                        ? typedAnswer.trim().toLowerCase() === currentQuestion.correctAnswer
+                          ? 'border-emerald-500 bg-emerald-50'
+                          : 'border-red-500 bg-red-50'
+                        : 'border-gray-200 bg-white'
                     }`}
-                  >
-                    <Text className="text-white font-medium">Check</Text>
-                  </Pressable>
-                )}
-              </View>
-            ) : (
-              /* Multiple choice answers */
-              <View className="gap-3">
-                {currentQuestion.answers.map((answer, index) => {
-                  const isSelected = selectedAnswer === answer;
-                  const isCorrect = answer === currentQuestion.correctAnswer;
-                  const isEthiopic = currentQuestion.type === 'script_matching';
+                  />
 
-                  let bgClass = 'bg-white border-gray-200';
-                  if (showResult) {
-                    if (isCorrect) bgClass = 'bg-emerald-50 border-emerald-500';
-                    else if (isSelected && !isCorrect) bgClass = 'bg-red-50 border-red-500';
-                  }
+                  {showResult && typedAnswer.trim().toLowerCase() !== currentQuestion.correctAnswer && (
+                    <Text className="text-center text-emerald-600 font-medium">
+                      Correct: {currentQuestion.word.harariLatin}
+                    </Text>
+                  )}
 
-                  return (
-                    <Pressable
-                      key={index}
-                      onPress={() => handleAnswerSelect(answer)}
-                      disabled={showResult}
-                      className={`w-full p-4 rounded-xl border-2 ${bgClass}`}
+                  {!showResult && (
+                    <TouchableOpacity
+                      onPress={handleProductionSubmit}
+                      disabled={typedAnswer.trim().length === 0}
+                      className={`w-full py-3 bg-emerald-600 rounded-xl items-center ${
+                        typedAnswer.trim().length === 0 ? 'opacity-50' : ''
+                      }`}
                     >
-                      <Text
-                        style={isEthiopic ? { fontFamily: 'NotoSansEthiopic-Regular' } : undefined}
-                        className={`font-medium text-gray-900 ${isEthiopic ? 'text-lg' : ''}`}
+                      <Text className="text-white font-medium">Check</Text>
+                    </TouchableOpacity>
+                  )}
+                </View>
+              ) : (
+                /* Multiple choice answers */
+                <View className="gap-2">
+                  {currentQuestion.answers.map((answer, index) => {
+                    const isSelected = selectedAnswer === answer;
+                    const isCorrect = answer === currentQuestion.correctAnswer;
+                    const isEthiopic = currentQuestion.type === 'script_matching';
+
+                    let bgClass = 'bg-white border-gray-200';
+                    if (showResult) {
+                      if (isCorrect) bgClass = 'bg-emerald-50 border-emerald-500';
+                      else if (isSelected && !isCorrect) bgClass = 'bg-red-50 border-red-500';
+                    }
+
+                    return (
+                      <TouchableOpacity
+                        key={index}
+                        onPress={() => handleAnswerSelect(answer)}
+                        disabled={showResult}
+                        className={`w-full p-3 rounded-xl border-2 ${bgClass}`}
                       >
-                        {answer}
-                      </Text>
-                    </Pressable>
-                  );
-                })}
-              </View>
-            )}
+                        <Text
+                          style={isEthiopic ? { fontFamily: 'NotoSansEthiopic-Regular' } : undefined}
+                          className={`font-medium text-gray-900 ${isEthiopic ? 'text-lg' : ''}`}
+                        >
+                          {answer}
+                        </Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
+              )}
+            </View>
 
-            {/* Continue button */}
-            {showResult && (
-              <Pressable
-                onPress={handleNextQuestion}
-                className="w-full mt-6 py-3 bg-emerald-600 rounded-xl items-center"
-              >
-                <Text className="text-white font-medium">Continue</Text>
-              </Pressable>
-            )}
-
-            <Text className="text-center text-sm text-gray-500 mt-4">
-              Question {practiceIndex + 1} of {practiceQuestions.length}
-            </Text>
-          </View>
+            {/* Bottom: Continue button + question counter - always at bottom */}
+            <View className="mt-2">
+              {showResult ? (
+                <TouchableOpacity
+                  onPress={handleNextQuestion}
+                  className="w-full py-3 bg-emerald-600 rounded-xl items-center"
+                >
+                  <Text className="text-white font-medium">Continue</Text>
+                </TouchableOpacity>
+              ) : (
+                <View style={{ height: 44 }} />
+              )}
+              <Text className="text-center text-xs text-gray-400 mt-1">
+                {practiceIndex + 1} / {practiceQuestions.length}
+              </Text>
+            </View>
+          </>
         )}
 
         {/* Complete Mode */}
         {mode === 'complete' && (
-          <View className="items-center py-8">
-            <View className="w-24 h-24 rounded-full bg-emerald-100 items-center justify-center mb-6">
+          <View className="flex-1 items-center justify-center">
+            <View className="w-20 h-20 rounded-full bg-emerald-100 items-center justify-center mb-4">
               <Ionicons name="checkmark" size={48} color="#059669" />
             </View>
             <Text className="text-2xl font-bold text-gray-900 mb-2">Lesson Complete!</Text>
@@ -484,13 +494,13 @@ export default function LessonPage() {
             </Text>
 
             <View className="w-full gap-3">
-              <Pressable
+              <TouchableOpacity
                 onPress={() => router.back()}
                 className="w-full py-3 bg-emerald-600 rounded-xl items-center"
               >
                 <Text className="text-white font-medium">Continue Learning</Text>
-              </Pressable>
-              <Pressable
+              </TouchableOpacity>
+              <TouchableOpacity
                 onPress={() => {
                   setMode('learn');
                   setLearnIndex(0);
@@ -503,11 +513,11 @@ export default function LessonPage() {
                 className="w-full py-3 bg-white rounded-xl border border-gray-200 items-center"
               >
                 <Text className="text-gray-700 font-medium">Practice Again</Text>
-              </Pressable>
+              </TouchableOpacity>
             </View>
           </View>
         )}
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }

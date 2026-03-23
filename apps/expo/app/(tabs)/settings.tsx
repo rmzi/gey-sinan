@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { View, Text, Pressable, ScrollView, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { useProgress } from '@/stores/useProgress';
@@ -80,11 +80,11 @@ export default function SettingsScreen() {
             This app is designed to help Harari diaspora youth reconnect with their ancestral language
             through interactive lessons and spaced repetition.
           </Text>
-          <Pressable onPress={() => router.push('/about' as never)}>
+          <TouchableOpacity onPress={() => router.push('/about' as never)}>
             <Text className="text-sm text-emerald-600 font-medium">
               Learn more about this project
             </Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
 
         {/* Data / Reset */}
@@ -93,12 +93,12 @@ export default function SettingsScreen() {
           <Text className="text-sm text-gray-500 mb-4">
             Your progress is stored locally on your device.
           </Text>
-          <Pressable
+          <TouchableOpacity
             onPress={handleResetProgress}
             className="px-4 py-2 bg-red-50 rounded-lg self-start"
           >
             <Text className="text-sm font-medium text-red-600">Reset All Progress</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

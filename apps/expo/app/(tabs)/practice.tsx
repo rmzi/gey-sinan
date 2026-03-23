@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -92,13 +92,13 @@ export default function PracticeScreen() {
             <Text className="text-2xl font-bold text-gray-900 mb-2">Session Complete!</Text>
             <Text className="text-gray-600 mb-6">You reviewed {reviewed} words</Text>
             <View className="w-full gap-3">
-              <Pressable
+              <TouchableOpacity
                 onPress={() => router.push('/' as never)}
                 className="w-full py-3 bg-emerald-600 rounded-xl items-center"
               >
                 <Text className="text-white font-medium">Back to Home</Text>
-              </Pressable>
-              <Pressable
+              </TouchableOpacity>
+              <TouchableOpacity
                 onPress={() => {
                   setCurrentIndex(0);
                   setReviewed(0);
@@ -108,7 +108,7 @@ export default function PracticeScreen() {
                 className="w-full py-3 bg-white rounded-xl border border-gray-200 items-center"
               >
                 <Text className="text-gray-700 font-medium">Practice Again</Text>
-              </Pressable>
+              </TouchableOpacity>
             </View>
           </View>
         ) : currentWord ? (
@@ -124,12 +124,12 @@ export default function PracticeScreen() {
             <Text className="text-gray-600 mb-6 text-center">
               Start a lesson to learn new words!
             </Text>
-            <Pressable
+            <TouchableOpacity
               onPress={() => router.push('/' as never)}
               className="px-6 py-3 bg-emerald-600 rounded-xl"
             >
               <Text className="text-white font-medium">Go to Lessons</Text>
-            </Pressable>
+            </TouchableOpacity>
           </View>
         )}
       </View>

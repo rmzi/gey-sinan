@@ -63,11 +63,12 @@ resource "aws_route53_record" "cert_validation" {
     }
   }
 
-  zone_id = local.zone_id
-  name    = each.value.name
-  type    = each.value.type
-  ttl     = 60
-  records = [each.value.record]
+  allow_overwrite = true
+  zone_id         = local.zone_id
+  name            = each.value.name
+  type            = each.value.type
+  ttl             = 60
+  records         = [each.value.record]
 }
 
 # Block until AWS has verified the DNS records and issued the certificate.

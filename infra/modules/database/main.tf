@@ -24,7 +24,7 @@ resource "aws_db_subnet_group" "main" {
 
 resource "aws_security_group" "db" {
   name        = "${var.name_prefix}-db-sg"
-  description = "RDS PostgreSQL — ingress from ECS tasks only"
+  description = "RDS PostgreSQL - ingress from ECS tasks only"
   vpc_id      = var.vpc_id
 
   egress {

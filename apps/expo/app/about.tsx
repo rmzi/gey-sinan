@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Pressable } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,9 +9,9 @@ export default function AboutPage() {
       {/* Header */}
       <View className="bg-white border-b border-gray-200 px-4 py-4">
         <View className="flex-row items-center justify-between">
-          <Pressable onPress={() => router.back()}>
+          <TouchableOpacity onPress={() => router.back()}>
             <Ionicons name="chevron-back" size={24} color="#6b7280" />
-          </Pressable>
+          </TouchableOpacity>
           <Text className="text-lg font-semibold text-gray-900">About Gey Sinan</Text>
           <View style={{ width: 24 }} />
         </View>
