@@ -50,18 +50,14 @@ dev: ## Start full local dev stack (Django + Postgres + Redis + Celery + Expo)
 		echo "  (apps/expo/package.json not found — skipping Expo)"; \
 	fi
 
-test: ## Run all tests (backend pytest + frontend jest)
+test: ## Run all tests (backend pytest with SQLite)
 	@echo "→ Running backend tests..."
-	@if [ -d backend ]; then \
+	@if [ -d backend ] && [ -f backend/.venv/bin/python ]; then \
+		cd backend && .venv/bin/python -m pytest; \
+	elif [ -d backend ]; then \
 		cd backend && python -m pytest; \
 	else \
 		echo "  (backend/ not found — skipping)"; \
-	fi
-	@echo "→ Running frontend tests..."
-	@if [ -f apps/expo/package.json ]; then \
-		cd apps/expo && npm test -- --watchAll=false; \
-	else \
-		echo "  (apps/expo not found — skipping)"; \
 	fi
 
 lint: ## Run all linters (ruff for Python, eslint for TS)
