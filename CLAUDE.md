@@ -60,3 +60,8 @@ AI-assisted development methodology. Skills for consistency. Agents for scale.
 - Wrong: `/tmp/project/` or `/tmp/feature-work/`
 - Wrong: `../project-feature-branch/` (old sibling format — migrate with `git worktree move`)
 - /tmp is only for temporary files (downloads, build artifacts, large files that shouldn't persist)
+
+**iOS/native mobile work: worktree exception.** Do NOT use worktrees for changes that touch native iOS/Android code or require device builds:
+- Native builds (`expo prebuild`, `expo run:ios`) generate large `ios/`/`android/` dirs with CocoaPods, Xcode projects, and signing configs that don't transfer between worktrees
+- Each worktree would need a full prebuild + pod install (~500MB, minutes of setup) and re-configuration of Xcode signing
+- Instead: do native mobile work on a single branch in the main checkout or a long-lived worktree. Use worktrees for backend, infra, and non-native frontend work that can run in parallel.
