@@ -66,6 +66,7 @@ AI-assisted development methodology. Skills for consistency. Agents for scale.
 - Each worktree would need a full prebuild + pod install (~500MB, minutes of setup) and re-configuration of Xcode signing
 - Instead: do native mobile work on a single branch in the main checkout or a long-lived worktree. Use worktrees for backend, infra, and non-native frontend work that can run in parallel.
 
+
 ## Deployment
 
 **Verified deployment workflow.** Never declare a deploy "done" without smoke-testing the live URL:
