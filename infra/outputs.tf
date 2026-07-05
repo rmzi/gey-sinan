@@ -71,6 +71,15 @@ output "ml_corpus_bucket_name" {
 }
 
 # ---------------------------------------------------------------------------
+# Uploads
+# ---------------------------------------------------------------------------
+
+output "upload_function_url" {
+  description = "Public Lambda function URL for the recording presign endpoint"
+  value       = module.uploads.function_url
+}
+
+# ---------------------------------------------------------------------------
 # ECS / Compute
 # ---------------------------------------------------------------------------
 

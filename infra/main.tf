@@ -89,6 +89,20 @@ module "storage" {
 }
 
 # ---------------------------------------------------------------------------
+# Uploads (presign Lambda for volunteer recording contributions)
+# ---------------------------------------------------------------------------
+
+module "uploads" {
+  source = "./modules/uploads"
+
+  name_prefix = local.name_prefix
+  environment = var.environment
+
+  recordings_bucket_name = module.storage.recordings_bucket_name
+  recordings_bucket_arn  = module.storage.recordings_bucket_arn
+}
+
+# ---------------------------------------------------------------------------
 # ECS (ECR, Cluster, ALB, Service)
 # ---------------------------------------------------------------------------
 
