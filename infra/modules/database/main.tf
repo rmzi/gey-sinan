@@ -66,9 +66,9 @@ resource "aws_db_instance" "main" {
   username = var.db_username
   password = var.db_password
 
-  allocated_storage     = 20
-  storage_type          = "gp3"
-  storage_encrypted     = true
+  allocated_storage = 20
+  storage_type      = "gp3"
+  storage_encrypted = true
 
   db_subnet_group_name   = aws_db_subnet_group.main.name
   vpc_security_group_ids = [aws_security_group.db.id]
@@ -81,7 +81,7 @@ resource "aws_db_instance" "main" {
   # Skip final snapshot in dev to allow easy teardown;
   # in prod this is overridden by db_backup_retention being higher
   # and teams should take a manual snapshot before destroying.
-  skip_final_snapshot = var.environment == "dev" ? true : false
+  skip_final_snapshot       = var.environment == "dev" ? true : false
   final_snapshot_identifier = var.environment == "dev" ? null : "${var.name_prefix}-final-snapshot"
 
   deletion_protection = var.environment == "prod" ? true : false

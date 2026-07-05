@@ -1,23 +1,40 @@
 locals {
+  all_domains = concat([var.domain_name], var.additional_domains)
+
   # Subdomains served by the static distribution vary by environment.
   # Prod: apex + dictionary + volunteer; dev: prefixed equivalents.
-  static_aliases = var.environment == "prod" ? [
-    var.domain_name,
-    "dictionary.${var.domain_name}",
-    "volunteer.${var.domain_name}",
-    ] : [
-    "dev.${var.domain_name}",
-    "dictionary-dev.${var.domain_name}",
-    "volunteer-dev.${var.domain_name}",
-  ]
+  # Every domain (primary + additional) gets the same alias set.
+  static_aliases = flatten([
+    for d in local.all_domains : (
+      var.environment == "prod" ? [
+        d,
+        "dictionary.${d}",
+        "volunteer.${d}",
+        ] : [
+        "dev.${d}",
+        "dictionary-dev.${d}",
+        "volunteer-dev.${d}",
+      ]
+    )
+  ])
 
-  api_aliases = var.environment == "prod" ? [
-    "api.${var.domain_name}",
-    "admin.${var.domain_name}",
-    ] : [
-    "api-dev.${var.domain_name}",
-    "admin-dev.${var.domain_name}",
-  ]
+  api_aliases = flatten([
+    for d in local.all_domains : (
+      var.environment == "prod" ? [
+        "api.${d}",
+        "admin.${d}",
+        ] : [
+        "api-dev.${d}",
+        "admin-dev.${d}",
+      ]
+    )
+  ])
+
+  # Which root domain (and therefore hosted zone) owns each alias.
+  alias_domain = {
+    for a in concat(local.static_aliases, local.api_aliases) :
+    a => [for d in local.all_domains : d if a == d || endswith(a, ".${d}")][0]
+  }
 }
 
 # ---------------------------------------------------------------------------
@@ -175,10 +192,10 @@ resource "aws_cloudfront_distribution" "api" {
 resource "aws_route53_record" "static" {
   for_each = toset(local.static_aliases)
 
-  zone_id = var.zone_id
+  zone_id = var.zone_ids[local.alias_domain[each.value]]
   # Strip the domain suffix to get the subdomain label (or "@" for apex).
-  name    = each.value == var.domain_name ? "" : trimsuffix(each.value, ".${var.domain_name}")
-  type    = "A"
+  name = each.value == local.alias_domain[each.value] ? "" : trimsuffix(each.value, ".${local.alias_domain[each.value]}")
+  type = "A"
 
   alias {
     name                   = aws_cloudfront_distribution.static.domain_name
@@ -194,8 +211,8 @@ resource "aws_route53_record" "static" {
 resource "aws_route53_record" "api" {
   for_each = toset(local.api_aliases)
 
-  zone_id = var.zone_id
-  name    = trimsuffix(each.value, ".${var.domain_name}")
+  zone_id = var.zone_ids[local.alias_domain[each.value]]
+  name    = trimsuffix(each.value, ".${local.alias_domain[each.value]}")
   type    = "A"
 
   alias {

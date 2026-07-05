@@ -72,3 +72,6 @@ infra/modules/*/dist/
 .agent/
 .claude/plans/
 .claude/swarm/
+
+# terraform saved plans
+*.tfplan

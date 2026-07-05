@@ -26,6 +26,12 @@ variable "domain_name" {
   default     = "geysinan.com"
 }
 
+variable "additional_domains" {
+  description = "Extra root domains served identically to domain_name (same cert, CloudFront aliases, subdomains, and Route 53 records; each needs its own hosted zone)"
+  type        = list(string)
+  default     = []
+}
+
 variable "create_hosted_zone" {
   description = "Whether to create the Route 53 hosted zone (false if zone already exists)"
   type        = bool

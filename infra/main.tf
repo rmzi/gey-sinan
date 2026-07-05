@@ -27,6 +27,18 @@ provider "aws" {
 
 locals {
   name_prefix = "${var.project_name}-${var.environment}"
+
+  # Browser origins allowed to hit the presign Lambda and PUT to the
+  # recordings bucket, across every served domain.
+  web_cors_origins = concat(
+    flatten([for d in concat([var.domain_name], var.additional_domains) : [
+      "https://${d}",
+      "https://dev.${d}",
+      "https://volunteer.${d}",
+      "https://volunteer-dev.${d}",
+    ]]),
+    ["http://localhost:8081"],
+  )
 }
 
 # ---------------------------------------------------------------------------
@@ -53,6 +65,7 @@ module "dns" {
 
   name_prefix        = local.name_prefix
   domain_name        = var.domain_name
+  additional_domains = var.additional_domains
   environment        = var.environment
   create_hosted_zone = var.create_hosted_zone
 }
@@ -70,10 +83,10 @@ module "database" {
   vpc_id                = module.networking.vpc_id
   ecs_security_group_id = module.ecs.ecs_sg_id
 
-  db_instance_class    = var.db_instance_class
-  db_username          = var.db_username
-  db_password          = var.db_password
-  db_backup_retention  = var.db_backup_retention
+  db_instance_class   = var.db_instance_class
+  db_username         = var.db_username
+  db_password         = var.db_password
+  db_backup_retention = var.db_backup_retention
 }
 
 # ---------------------------------------------------------------------------
@@ -86,6 +99,8 @@ module "storage" {
   name_prefix = local.name_prefix
   environment = var.environment
   domain_name = var.domain_name
+
+  recordings_cors_origins = local.web_cors_origins
 }
 
 # ---------------------------------------------------------------------------
@@ -95,7 +110,8 @@ module "storage" {
 module "uploads" {
   source = "./modules/uploads"
 
-  name_prefix = local.name_prefix
+  name_prefix     = local.name_prefix
+  allowed_origins = local.web_cors_origins
 
   recordings_bucket_name = module.storage.recordings_bucket_name
   recordings_bucket_arn  = module.storage.recordings_bucket_arn
@@ -135,11 +151,12 @@ module "cdn" {
     aws = aws.us_east_1
   }
 
-  name_prefix     = local.name_prefix
-  environment     = var.environment
-  domain_name     = var.domain_name
-  certificate_arn = module.dns.certificate_arn
-  zone_id         = module.dns.zone_id
+  name_prefix        = local.name_prefix
+  environment        = var.environment
+  domain_name        = var.domain_name
+  additional_domains = var.additional_domains
+  certificate_arn    = module.dns.certificate_arn
+  zone_ids           = module.dns.zone_ids
 
   static_bucket_domain_name  = module.storage.static_bucket_regional_domain
   media_bucket_domain_name   = module.storage.media_bucket_regional_domain

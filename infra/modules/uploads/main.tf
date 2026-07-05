@@ -92,14 +92,8 @@ resource "aws_lambda_function_url" "presign" {
   cors {
     allow_credentials = false
     allow_methods     = ["GET"]
-    allow_origins = [
-      "https://volunteer.geysinan.com",
-      "https://volunteer-dev.geysinan.com",
-      "https://geysinan.com",
-      "https://dev.geysinan.com",
-      "http://localhost:8081",
-    ]
-    allow_headers = ["content-type"]
-    max_age       = 3600
+    allow_origins     = var.allowed_origins
+    allow_headers     = ["content-type"]
+    max_age           = 3600
   }
 }
