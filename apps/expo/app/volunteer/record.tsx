@@ -16,7 +16,7 @@ import { CorpusWord, Speaker } from '@/lib/types';
 
 type Stage = 'loading' | 'setup' | 'consent' | 'record' | 'done';
 type WordStepState = 'ready' | 'recording' | 'review';
-type UploadStatus = 'pending' | 'uploading' | 'uploaded' | 'failed';
+type UploadStatus = 'pending' | 'uploading' | 'uploaded' | 'failed' | 'skipped';
 
 export default function VolunteerRecordScreen() {
   const [stage, setStage] = useState<Stage>('loading');
@@ -161,8 +161,9 @@ export default function VolunteerRecordScreen() {
     setSessionCount((c) => c + 1);
 
     if (!config.uploadUrl) {
-      // No upload endpoint configured — treat as a local-only dry run.
-      setUploadStatuses((prev) => ({ ...prev, [currentWord.id]: 'failed' }));
+      // No upload endpoint configured — local-only dry run. Distinct from
+      // 'failed' so the session summary doesn't read as an error in dev.
+      setUploadStatuses((prev) => ({ ...prev, [currentWord.id]: 'skipped' }));
       advanceWord();
       return;
     }
@@ -184,6 +185,10 @@ export default function VolunteerRecordScreen() {
   );
   const failedCount = useMemo(
     () => Object.values(uploadStatuses).filter((s) => s === 'failed').length,
+    [uploadStatuses]
+  );
+  const skippedCount = useMemo(
+    () => Object.values(uploadStatuses).filter((s) => s === 'skipped').length,
     [uploadStatuses]
   );
 
@@ -392,6 +397,7 @@ export default function VolunteerRecordScreen() {
             <Text className="text-gray-600 text-center">
               You recorded {uploadedCount} word{uploadedCount === 1 ? '' : 's'} this session.
               {failedCount > 0 ? ` ${failedCount} couldn't upload — check your connection.` : ''}
+              {skippedCount > 0 ? ` ${skippedCount} not uploaded (no upload endpoint configured).` : ''}
             </Text>
             <TouchableOpacity
               onPress={() => router.push('/volunteer' as never)}

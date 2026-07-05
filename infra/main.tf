@@ -96,7 +96,6 @@ module "uploads" {
   source = "./modules/uploads"
 
   name_prefix = local.name_prefix
-  environment = var.environment
 
   recordings_bucket_name = module.storage.recordings_bucket_name
   recordings_bucket_arn  = module.storage.recordings_bucket_arn

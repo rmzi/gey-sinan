@@ -93,14 +93,21 @@ function parseCsv(content) {
   return rows;
 }
 
+// Coupled contract: generated ids are used as the `wordId` in presign
+// requests, and the uploads Lambda (infra/modules/uploads/src/index.mjs)
+// validates them against /^[a-z0-9][a-z0-9-]{0,63}$/ — ids must stay
+// lowercase [a-z0-9-] and, including the vocab-/dict-/phrase- prefix,
+// at most 64 chars.
 function slugify(text) {
   return text
     .toLowerCase()
     .normalize('NFKD')
-    .replace(/[^\w\s-]/g, '')
+    .replace(/_/g, '-')
+    .replace(/[^a-z0-9\s-]/g, '')
     .trim()
     .replace(/\s+/g, '-')
-    .slice(0, 60);
+    .replace(/-{2,}/g, '-')
+    .slice(0, 40);
 }
 
 function dedupeKey(harariLatin, english) {

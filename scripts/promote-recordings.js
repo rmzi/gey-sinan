@@ -35,7 +35,7 @@
  *   node scripts/promote-recordings.js --approve salaam-1719858123456.webm --word salaam --dry-run
  */
 
-const { execSync } = require('child_process');
+const { execFileSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -71,14 +71,19 @@ const UPLOADS_PREFIX = 'uploads/';
 // Matches uploads/<speakerId>/<wordId>-<epochMillis>.<ext>
 const KEY_PATTERN = /^uploads\/([^/]+)\/([a-z0-9-]+)-(\d+)\.([a-z0-9]+)$/;
 
-function runAwsCli(cmd) {
-  return execSync(cmd, { stdio: ['ignore', 'pipe', 'pipe'], encoding: 'utf-8' });
+// argv array, no shell: object keys echo volunteer-supplied speakerId/wordId,
+// so never let them pass through /bin/sh interpolation.
+function runAwsCli(cliArgs) {
+  return execFileSync('aws', cliArgs, { stdio: ['ignore', 'pipe', 'pipe'], encoding: 'utf-8' });
 }
 
 function listUploads() {
-  const output = runAwsCli(
-    `aws s3api list-objects-v2 --bucket "${recordingsBucket}" --prefix "${UPLOADS_PREFIX}" --profile ${awsProfile}`
-  );
+  const output = runAwsCli([
+    's3api', 'list-objects-v2',
+    '--bucket', recordingsBucket,
+    '--prefix', UPLOADS_PREFIX,
+    '--profile', awsProfile,
+  ]);
 
   let parsed;
   try {
@@ -176,10 +181,13 @@ function doApprove() {
   } else {
     console.log('Copying object...');
     try {
-      runAwsCli(
-        `aws s3 cp "s3://${recordingsBucket}/${fullKey}" "s3://${staticBucket}/${destKey}" ` +
-          `--profile ${awsProfile} --cache-control "public, max-age=31536000, immutable"`
-      );
+      runAwsCli([
+        's3', 'cp',
+        `s3://${recordingsBucket}/${fullKey}`,
+        `s3://${staticBucket}/${destKey}`,
+        '--profile', awsProfile,
+        '--cache-control', 'public, max-age=31536000, immutable',
+      ]);
       console.log('  Copied successfully');
     } catch (error) {
       console.error('  Failed to copy object');
