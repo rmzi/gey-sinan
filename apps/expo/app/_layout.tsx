@@ -1,8 +1,9 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Stack, router, usePathname } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { Platform } from 'react-native';
 import 'react-native-reanimated';
 import '../global.css';
 
@@ -42,8 +43,33 @@ export default function RootLayout() {
   return <RootLayoutNav />;
 }
 
+/**
+ * On the deployed static site, dictionary.geysinan.com and
+ * volunteer.geysinan.com serve the same bundle behind a CloudFront function
+ * that rewrites the request path; the SPA itself sees a clean "/" pathname
+ * either way. Route to the right screen based on hostname so visiting the
+ * bare domain lands somewhere useful. Web-only; native has no hostname.
+ */
+function useHostBasedLanding() {
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (Platform.OS !== 'web') return;
+    if (typeof window === 'undefined') return;
+    if (pathname !== '/') return;
+
+    const hostname = window.location.hostname;
+    if (hostname.startsWith('dictionary')) {
+      router.replace('/dictionary' as never);
+    } else if (hostname.startsWith('volunteer')) {
+      router.replace('/volunteer' as never);
+    }
+  }, [pathname]);
+}
+
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+  useHostBasedLanding();
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
