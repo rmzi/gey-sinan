@@ -43,10 +43,14 @@ locals {
 
 # ---------------------------------------------------------------------------
 # Networking
+# Backend stack (VPC + NAT, RDS, ECS/ALB, API CloudFront) is gated behind
+# var.enable_backend. It costs ~$75/mo idle, so keep it off until a backend
+# image actually ships to ECR.
 # ---------------------------------------------------------------------------
 
 module "networking" {
   source = "./modules/networking"
+  count  = var.enable_backend ? 1 : 0
 
   name_prefix = local.name_prefix
   environment = var.environment
@@ -76,12 +80,13 @@ module "dns" {
 
 module "database" {
   source = "./modules/database"
+  count  = var.enable_backend ? 1 : 0
 
   name_prefix           = local.name_prefix
   environment           = var.environment
-  private_subnet_ids    = module.networking.private_subnet_ids
-  vpc_id                = module.networking.vpc_id
-  ecs_security_group_id = module.ecs.ecs_sg_id
+  private_subnet_ids    = module.networking[0].private_subnet_ids
+  vpc_id                = module.networking[0].vpc_id
+  ecs_security_group_id = module.ecs[0].ecs_sg_id
 
   db_instance_class   = var.db_instance_class
   db_username         = var.db_username
@@ -123,12 +128,13 @@ module "uploads" {
 
 module "ecs" {
   source = "./modules/ecs"
+  count  = var.enable_backend ? 1 : 0
 
   name_prefix        = local.name_prefix
   environment        = var.environment
-  vpc_id             = module.networking.vpc_id
-  public_subnet_ids  = module.networking.public_subnet_ids
-  private_subnet_ids = module.networking.private_subnet_ids
+  vpc_id             = module.networking[0].vpc_id
+  public_subnet_ids  = module.networking[0].public_subnet_ids
+  private_subnet_ids = module.networking[0].private_subnet_ids
   certificate_arn    = module.dns.certificate_arn
 
   ecs_cpu           = var.ecs_cpu
@@ -162,6 +168,7 @@ module "cdn" {
   media_bucket_domain_name   = module.storage.media_bucket_regional_domain
   oai_cloudfront_access_path = module.storage.oai_cloudfront_path
 
-  alb_dns_name = module.ecs.alb_dns_name
-  alb_zone_id  = module.ecs.alb_zone_id
+  enable_api   = var.enable_backend
+  alb_dns_name = var.enable_backend ? module.ecs[0].alb_dns_name : ""
+  alb_zone_id  = var.enable_backend ? module.ecs[0].alb_zone_id : ""
 }

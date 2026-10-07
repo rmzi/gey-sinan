@@ -138,6 +138,8 @@ resource "aws_cloudfront_distribution" "static" {
 # ---------------------------------------------------------------------------
 
 resource "aws_cloudfront_distribution" "api" {
+  count = var.enable_api ? 1 : 0
+
   enabled         = true
   is_ipv6_enabled = true
   price_class     = "PriceClass_100"
@@ -209,15 +211,15 @@ resource "aws_route53_record" "static" {
 # ---------------------------------------------------------------------------
 
 resource "aws_route53_record" "api" {
-  for_each = toset(local.api_aliases)
+  for_each = var.enable_api ? toset(local.api_aliases) : toset([])
 
   zone_id = var.zone_ids[local.alias_domain[each.value]]
   name    = trimsuffix(each.value, ".${local.alias_domain[each.value]}")
   type    = "A"
 
   alias {
-    name                   = aws_cloudfront_distribution.api.domain_name
-    zone_id                = aws_cloudfront_distribution.api.hosted_zone_id
+    name                   = aws_cloudfront_distribution.api[0].domain_name
+    zone_id                = aws_cloudfront_distribution.api[0].hosted_zone_id
     evaluate_target_health = false
   }
 }

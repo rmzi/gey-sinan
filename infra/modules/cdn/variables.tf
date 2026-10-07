@@ -44,6 +44,12 @@ variable "oai_cloudfront_access_path" {
   type        = string
 }
 
+variable "enable_api" {
+  description = "Create the API CloudFront distribution and its DNS records"
+  type        = bool
+  default     = true
+}
+
 variable "alb_dns_name" {
   description = "DNS name of the application load balancer"
   type        = string

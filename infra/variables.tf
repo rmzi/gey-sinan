@@ -49,12 +49,14 @@ variable "db_username" {
   description = "Master username for the RDS database"
   type        = string
   sensitive   = true
+  default     = null # required only when enable_backend = true
 }
 
 variable "db_password" {
   description = "Master password for the RDS database"
   type        = string
   sensitive   = true
+  default     = null # required only when enable_backend = true
 }
 
 variable "db_backup_retention" {
@@ -87,4 +89,10 @@ variable "container_image" {
   description = "Full ECR image URI for the backend container (e.g. 123456789.dkr.ecr.us-east-1.amazonaws.com/geysinan-backend:latest)"
   type        = string
   default     = ""
+}
+
+variable "enable_backend" {
+  description = "Provision the backend stack (VPC/NAT, RDS, ECS/ALB, API CloudFront). ~$75/mo idle — leave false until a backend image ships."
+  type        = bool
+  default     = false
 }
