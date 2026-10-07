@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.0] - 2026-10-07T03:33:19+00:00
+
+### Added
+- Searchable dictionary browser with suggest-a-fix (`/dictionary`)
+- Web recording station for community pronunciations (`/volunteer`)
+- Hostname-based routing to `/dictionary` or `/volunteer`
+- Unified `corpus.json` merging dictionary + vocabulary
+- Presign Lambda for volunteer recording uploads
+- Additional root domains served alongside the primary (`additional_domains`)
+- Apps Script fix-receiver setup docs and volunteer architecture ADR
+
+### Changed
+- Backend stack (VPC/NAT, RDS, ECS/ALB, API CloudFront) gated behind `enable_backend` (default off); dev backend torn down (~$75/mo, unused)
+
+### Fixed
+- Review findings on the volunteer/dictionary feature
+
+### Removed
+- Stray nested `apps/expo` duplicate of the useProgress store
+
 ## [0.2.0] - 2026-02-13T07:12:55+00:00
 
 ### Added
