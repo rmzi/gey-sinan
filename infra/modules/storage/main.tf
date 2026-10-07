@@ -142,6 +142,18 @@ resource "aws_s3_bucket_versioning" "recordings" {
   }
 }
 
+resource "aws_s3_bucket_cors_configuration" "recordings" {
+  bucket = aws_s3_bucket.recordings.id
+
+  cors_rule {
+    allowed_headers = ["content-type"]
+    allowed_methods = ["PUT"]
+    allowed_origins = var.recordings_cors_origins
+    expose_headers  = ["ETag"]
+    max_age_seconds = 3600
+  }
+}
+
 # ---------------------------------------------------------------------------
 # ML Corpus Bucket (training data, model artifacts)
 # Fully private — accessed only by backend / ML pipelines via IAM.

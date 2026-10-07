@@ -13,14 +13,20 @@ variable "domain_name" {
   type        = string
 }
 
+variable "additional_domains" {
+  description = "Extra root domains served identically to domain_name"
+  type        = list(string)
+  default     = []
+}
+
 variable "certificate_arn" {
   description = "ARN of the ACM certificate (must be in us-east-1)"
   type        = string
 }
 
-variable "zone_id" {
-  description = "Route 53 hosted zone ID"
-  type        = string
+variable "zone_ids" {
+  description = "Route 53 hosted zone IDs keyed by root domain"
+  type        = map(string)
 }
 
 variable "static_bucket_domain_name" {
@@ -36,6 +42,12 @@ variable "media_bucket_domain_name" {
 variable "oai_cloudfront_access_path" {
   description = "CloudFront OAI path string for S3 origins"
   type        = string
+}
+
+variable "enable_api" {
+  description = "Create the API CloudFront distribution and its DNS records"
+  type        = bool
+  default     = true
 }
 
 variable "alb_dns_name" {

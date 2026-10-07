@@ -26,6 +26,12 @@ variable "domain_name" {
   default     = "geysinan.com"
 }
 
+variable "additional_domains" {
+  description = "Extra root domains served identically to domain_name (same cert, CloudFront aliases, subdomains, and Route 53 records; each needs its own hosted zone)"
+  type        = list(string)
+  default     = []
+}
+
 variable "create_hosted_zone" {
   description = "Whether to create the Route 53 hosted zone (false if zone already exists)"
   type        = bool
@@ -43,12 +49,14 @@ variable "db_username" {
   description = "Master username for the RDS database"
   type        = string
   sensitive   = true
+  default     = null # required only when enable_backend = true
 }
 
 variable "db_password" {
   description = "Master password for the RDS database"
   type        = string
   sensitive   = true
+  default     = null # required only when enable_backend = true
 }
 
 variable "db_backup_retention" {
@@ -81,4 +89,10 @@ variable "container_image" {
   description = "Full ECR image URI for the backend container (e.g. 123456789.dkr.ecr.us-east-1.amazonaws.com/geysinan-backend:latest)"
   type        = string
   default     = ""
+}
+
+variable "enable_backend" {
+  description = "Provision the backend stack (VPC/NAT, RDS, ECS/ALB, API CloudFront). ~$75/mo idle — leave false until a backend image ships."
+  type        = bool
+  default     = false
 }

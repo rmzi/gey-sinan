@@ -103,3 +103,47 @@ export interface Phrase {
 }
 
 export type ExerciseType = 'multiple_choice' | 'matching' | 'listening' | 'script_matching' | 'production';
+
+// Dictionary corpus (public/data/corpus.json — merged vocabulary + bulk dictionary)
+export interface CorpusWord {
+  id: string;
+  harariLatin: string;
+  harariEthiopic?: string;
+  harariArabic?: string;
+  english: string;
+  category: string;
+  source?: string;
+  verified?: string;
+  notes?: string;
+  audioUrl?: string;
+}
+
+export interface CorpusPhrase {
+  id: string;
+  harariLatin: string;
+  harariEthiopic?: string;
+  harariArabic?: string;
+  english: string;
+  category: string;
+  wordIds: string[];
+  notes?: string;
+}
+
+export interface Corpus {
+  words: CorpusWord[];
+  phrases: CorpusPhrase[];
+}
+
+// Suggest-a-fix form
+export type FixIssueType = 'spelling' | 'meaning' | 'usage' | 'other';
+
+export interface FixSuggestion {
+  entryId: string;
+  harariLatin: string;
+  english: string;
+  issueType: FixIssueType;
+  suggestion: string;
+  comment?: string;
+  contributorName?: string;
+  contributorEmail?: string;
+}

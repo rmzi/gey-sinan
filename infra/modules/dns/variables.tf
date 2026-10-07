@@ -8,6 +8,12 @@ variable "domain_name" {
   type        = string
 }
 
+variable "additional_domains" {
+  description = "Extra root domains served identically to domain_name (each gets a hosted-zone lookup and wildcard + apex SANs on the certificate)"
+  type        = list(string)
+  default     = []
+}
+
 variable "environment" {
   description = "Deployment environment"
   type        = string
